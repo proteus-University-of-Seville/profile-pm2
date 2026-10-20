@@ -1,21 +1,45 @@
 # PM² profile
 
+> **Work in progress.** This profile is not complete yet: it covers the three artefacts of the
+> initiating phase of PM² (see [Available documents](#available-documents)). The other
+> artefacts of the methodology will be added progressively, and the archetypes may still
+> change.
+
 Bilingual (English/Spanish) [PROTEUS](https://github.com/proteus-University-of-Seville/proteus-core)
-profile for the [PM²](https://www.pm2alliance.eu/) project management methodology. It extends the
-archetypes of the `basic` profile with the artefacts of the initiating phase: the
-**Project Initiation Request** (PIR), the **Business Case** (BC) and the **Project Charter** (PC).
+profile for the [PM²](https://www.pm2alliance.eu/) project management methodology of the
+European Commission. It extends the archetypes of the `basic` profile with the concepts of the
+PM² artefacts, following the templates of the PM² Alliance (version 3.0.1).
+
+## Available documents
+
+| # | PM² artefact | Acronym (en / es) | Status |
+| --- | --- | --- | --- |
+| 01 | Project Initiation Request (*Solicitud de inicio del proyecto*) | PIR / SIP | Available |
+| 02 | Business Case (*Caso de negocio*) | BC / CN | Available |
+| 03 | Project Charter (*Acta de constitución del proyecto*) | PC / AC | Available |
+| — | Organisations and stakeholders (*Organizaciones y partes interesadas*) | STK / OPI | Available (not a PM² artefact: the organisations and people that the roles of the other documents trace to) |
+| 04–33 | Project Handbook, Project Stakeholder Matrix, Project Work Plan, the management plans (outsourcing, deliverables acceptance, transition, business implementation, requirements, change, risk, issue, quality, communications), meeting agendas and minutes, status and progress reports, logs (risk, issue, decision, change), checklists and the Project End Report | | Not yet |
+
+Each available document has the sections of its PM² template, with a guidance comment in
+every section that explains its content and the objects to use in it. The objects identified
+in an artefact are reused in the next ones (see [Conceptual model](#conceptual-model)).
 
 ## Usage
 
-Point PROTEUS at this folder in the settings dialog, or in `proteus.ini`:
+The profile is selected in either of these ways:
 
-```ini
-[settings]
-using_default_profile = False
-custom_profile_path = C:/proteus-profiles/pm2
-```
+- **From PROTEUS**: click *Settings* in the *Home* tab (*Application* group). In the *Profile*
+  group of the dialog, check the option to use a custom profile, select the folder of the
+  profile (e.g. `C:\proteus-profiles\pm2`) and click *OK*.
+- **Editing the `proteus.ini` file** of PROTEUS, with the application closed:
 
-Then create a project from one of the project archetypes:
+  ```ini
+  using_default_profile = False
+  custom_profile_path = C:/proteus-profiles/pm2
+  ```
+
+PROTEUS loads the profile at start-up, so restart it in both cases. Then create a project from
+one of the project archetypes:
 
 - **PM² project** (`pm2-empty`): a Project Initiation Request, a Business Case and a Project
   Charter with their sections and guidance, and a document for the organisations and
