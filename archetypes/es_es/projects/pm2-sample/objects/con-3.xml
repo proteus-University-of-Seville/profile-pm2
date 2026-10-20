@@ -2,7 +2,7 @@
 <object id="con-3" classes="traceable-object constraint" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>CON-</prefix>
+      <prefix>REST-</prefix>
       <number>003</number>
       <suffix></suffix>
     </codeProperty>

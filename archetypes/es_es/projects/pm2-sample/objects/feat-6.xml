@@ -2,7 +2,7 @@
 <object id="feat-6" classes="traceable-object feature" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>FEAT-</prefix>
+      <prefix>FUN-</prefix>
       <number>006</number>
       <suffix></suffix>
     </codeProperty>

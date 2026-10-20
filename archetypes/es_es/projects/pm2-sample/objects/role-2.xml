@@ -2,7 +2,7 @@
 <object id="role-2" classes="traceable-object role-assignment" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>ROLE-</prefix>
+      <prefix>ROL-</prefix>
       <number>002</number>
       <suffix></suffix>
     </codeProperty>

@@ -2,7 +2,7 @@
 <object id="sc-1" classes="traceable-object success-criterion" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>SC-</prefix>
+      <prefix>CEXI-</prefix>
       <number>001</number>
       <suffix></suffix>
     </codeProperty>

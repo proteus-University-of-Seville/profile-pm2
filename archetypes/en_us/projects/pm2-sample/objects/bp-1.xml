@@ -2,7 +2,7 @@
 <object id="bp-1" classes="traceable-object business-process" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>BP-</prefix>
+      <prefix>PROC-</prefix>
       <number>001</number>
       <suffix></suffix>
     </codeProperty>

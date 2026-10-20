@@ -2,7 +2,7 @@
 <object id="ms-2" classes="traceable-object milestone" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>MS-</prefix>
+      <prefix>HITO-</prefix>
       <number>002</number>
       <suffix></suffix>
     </codeProperty>

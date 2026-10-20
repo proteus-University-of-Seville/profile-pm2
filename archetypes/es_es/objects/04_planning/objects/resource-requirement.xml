@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <object id="resource-requirement" classes="traceable-object resource-requirement" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
-    <codeProperty name=":Proteus-code" category="general" inmutable="true"><prefix><![CDATA[RES-]]></prefix><number>001</number><suffix><![CDATA[]]></suffix></codeProperty>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true"><prefix><![CDATA[RECU-]]></prefix><number>001</number><suffix><![CDATA[]]></suffix></codeProperty>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Recurso]]></stringProperty>
     <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>

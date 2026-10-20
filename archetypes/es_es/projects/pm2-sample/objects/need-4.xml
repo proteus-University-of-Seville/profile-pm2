@@ -2,7 +2,7 @@
 <object id="need-4" classes="traceable-object need" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>NEED-</prefix>
+      <prefix>NEC-</prefix>
       <number>004</number>
       <suffix></suffix>
     </codeProperty>

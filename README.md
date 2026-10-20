@@ -38,32 +38,32 @@ An object identified in an artefact is reused in the next ones:
   later artefact needs a different version (e.g. a success criterion of the PIR made critical in
   the BC).
 
-| Class | Code | Main properties | Traces |
+| Class | Code (en / es) | Main properties | Traces |
 | --- | --- | --- | --- |
 | `initiation-request` | | initiator, organisation/unit, PO, SP, approving authority, dates, estimated effort (person-days), other costs, type of delivery | to stakeholders and organisations |
-| `business-process` | BP- | process category (the 16 categories of the PM² templates), domain, sub-domain, macro process | owner → organisation, stakeholder |
-| `business-situation` | SIT- | kind (need, problem, opportunity), urgency | |
-| `strategic-goal` | SG- | | owner → organisation |
-| `legal-basis` | LB- | kind, reference (URL) | supports → strategic goal |
-| `outcome` | OUT- | | addresses → business situation, contributes to → strategic goal |
-| `impact` | IMP- | perspective, area, caused by (current situation or solution), impact on owners and users | affects → stakeholder, organisation; affected processes → business process |
-| `benefit` | BEN- | indicator, baseline, target | derives from → outcome, perceived by → stakeholder, organisation |
-| `alternative` | ALT- | kind (do nothing, reuse, simple, sophisticated), SWOT, qualitative assessment, chosen, reasons for the choice | addresses → business situation |
-| `scope-item` | SCP- | inclusion (in, out), kind | realises → alternative |
-| `deliverable` | DLV- | kind; may contain sub-deliverables | within → scope item, contributes to → outcome |
-| `need` | NEED- | priority (essential, desirable, optional), desired solution, justification, how it is addressed today | stakeholders → stakeholder, organisation; addresses → business situation |
-| `feature` | FEAT- | high level capability (what and why, not how) | satisfies → need, delivered in → deliverable |
-| `milestone` | MS- | kind (start, milestone, end of phase, delivery), PM² phase, planned date | delivers → deliverable |
-| `resource-requirement` | RES- | kind (staff, equipment, facilities, tools), quantity, skills, phase, how it will be obtained | provided by → organisation, responsible → stakeholder |
+| `business-process` | PROC- / PROC- | process category (the 16 categories of the PM² templates), domain, sub-domain, macro process | owner → organisation, stakeholder |
+| `business-situation` | SIT- / SIT- | kind (need, problem, opportunity), urgency | |
+| `strategic-goal` | GOAL- / OBJ- | | owner → organisation |
+| `legal-basis` | LEG- / LEG- | kind, reference (URL) | supports → strategic goal |
+| `outcome` | OUT- / RESU- | | addresses → business situation, contributes to → strategic goal |
+| `impact` | IMP- / IMP- | perspective, area, caused by (current situation or solution), impact on owners and users | affects → stakeholder, organisation; affected processes → business process |
+| `benefit` | BEN- / BEN- | indicator, baseline, target | derives from → outcome, perceived by → stakeholder, organisation |
+| `alternative` | ALT- / ALT- | kind (do nothing, reuse, simple, sophisticated), SWOT, qualitative assessment, chosen, reasons for the choice | addresses → business situation |
+| `scope-item` | SCP- / ALC- | inclusion (in, out), kind | realises → alternative |
+| `deliverable` | DLV- / ENTR- | kind; may contain sub-deliverables | within → scope item, contributes to → outcome |
+| `need` | NEED- / NEC- | priority (essential, desirable, optional), desired solution, justification, how it is addressed today | stakeholders → stakeholder, organisation; addresses → business situation |
+| `feature` | FEAT- / FUN- | high level capability (what and why, not how) | satisfies → need, delivered in → deliverable |
+| `milestone` | MILE- / HITO- | kind (start, milestone, end of phase, delivery), PM² phase, planned date | delivers → deliverable |
+| `resource-requirement` | RSRC- / RECU- | kind (staff, equipment, facilities, tools), quantity, skills, phase, how it will be obtained | provided by → organisation, responsible → stakeholder |
 | `cost-plan` | | first year, funding source, previous investments; its children are the costs | |
 | `cost-item` | | group (solution or business implementation), category, nature (staff in FTE, other in k€), budget line, years 1 to 5 | |
-| `role-assignment` | ROLE- | PM² role (AGB, PSC, PO, BM, SP, PM, BIG, UR, PCT, PSO), responsibilities, deviations from the standard | assignee → stakeholder, organisation |
+| `role-assignment` | ROLE- / ROL- | PM² role (AGB, PSC, PO, BM, SP, PM, BIG, UR, PCT, PSO), responsibilities, deviations from the standard | assignee → stakeholder, organisation |
 | `stakeholder` | | the properties of `basic` plus profile and perceived problems (generated, not copied from `basic`) | works for → organisation |
-| `success-criterion` | SC- | dimension (scope, schedule, cost...), target, critical, applies to (project, product) | evaluates → outcome |
-| `assumption` | ASM- | area, validation | may become → risk |
-| `constraint` | CON- | area | |
-| `risk` | RSK- | the columns of the PM² Risk Log: category, status, likelihood, impact, owner, response strategy, actions, escalation | related to → assumption, constraint |
-| `interdependency` | DEP- | kind (interrelation, interdependency, synergy, IT reuse, request or sharing), scope | related to → business situation, alternative, deliverable |
+| `success-criterion` | SUCC- / CEXI- | dimension (scope, schedule, cost...), target, critical, applies to (project, product) | evaluates → outcome |
+| `assumption` | ASM- / SUP- | area, validation | may become → risk |
+| `constraint` | CON- / REST- | area | |
+| `risk` | RISK- / RIES- | the columns of the PM² Risk Log: category, status, likelihood, impact, owner, response strategy, actions, escalation | related to → assumption, constraint |
+| `interdependency` | DEP- / DEP- | kind (interrelation, interdependency, synergy, IT reuse, request or sharing), scope | related to → business situation, alternative, deliverable |
 | `document-control` | | approvals and revisions of the document (children) | |
 | `approval` | | approver, action (approve, review) | approver → stakeholder |
 | `revision` | | revision, author, changes | created by → stakeholder |

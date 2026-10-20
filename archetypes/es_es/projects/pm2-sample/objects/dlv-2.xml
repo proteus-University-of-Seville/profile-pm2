@@ -2,7 +2,7 @@
 <object id="dlv-2" classes="traceable-object deliverable" acceptedChildren="deliverable" acceptedParents=":Proteus-document section deliverable">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>DLV-</prefix>
+      <prefix>ENTR-</prefix>
       <number>002</number>
       <suffix></suffix>
     </codeProperty>

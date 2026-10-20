@@ -2,7 +2,7 @@
 <object id="sg-1" classes="traceable-object strategic-goal" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>SG-</prefix>
+      <prefix>OBJ-</prefix>
       <number>001</number>
       <suffix></suffix>
     </codeProperty>

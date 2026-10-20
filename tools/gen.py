@@ -24,7 +24,7 @@ def prop_xml(spec, lang, value=None):
     a = f'name="{name}" category="{cat}"'
     if "tooltip" in attrs: a += f' tooltip="{attrs["tooltip"]}"'
     if kind == "code":
-        return (f'<codeProperty {a} inmutable="true"><prefix><![CDATA[{attrs["prefix"]}]]></prefix>'
+        return (f'<codeProperty {a} inmutable="true"><prefix><![CDATA[{txt(attrs["prefix"], lang)}]]></prefix>'
                 f'<number>{v}</number><suffix><![CDATA[]]></suffix></codeProperty>')
     if kind in ("string", "markdown", "url", "file"):
         return f'<{kind}Property {a}><![CDATA[{v}]]></{kind}Property>'

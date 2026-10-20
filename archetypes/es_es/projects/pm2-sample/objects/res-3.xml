@@ -2,7 +2,7 @@
 <object id="res-3" classes="traceable-object resource-requirement" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>RES-</prefix>
+      <prefix>RECU-</prefix>
       <number>003</number>
       <suffix></suffix>
     </codeProperty>

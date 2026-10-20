@@ -2,7 +2,7 @@
 <object id="asm-1" classes="traceable-object assumption" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>ASM-</prefix>
+      <prefix>SUP-</prefix>
       <number>001</number>
       <suffix></suffix>
     </codeProperty>

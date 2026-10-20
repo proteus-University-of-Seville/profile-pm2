@@ -2,7 +2,7 @@
 <object id="lb-2" classes="traceable-object legal-basis" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>LB-</prefix>
+      <prefix>LEG-</prefix>
       <number>002</number>
       <suffix></suffix>
     </codeProperty>

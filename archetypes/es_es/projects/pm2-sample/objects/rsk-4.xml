@@ -2,7 +2,7 @@
 <object id="rsk-4" classes="traceable-object risk" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>RSK-</prefix>
+      <prefix>RIES-</prefix>
       <number>004</number>
       <suffix></suffix>
     </codeProperty>

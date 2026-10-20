@@ -495,32 +495,32 @@ archetype("initiation-request", "01_organisation", "initiation-request",
     ], parents=":Proteus-document")
 
 archetype("business-situation", "02_rationale", "traceable-object business-situation",
-    item("SIT-", t("Business situation", "Situación de negocio"),
+    item(t("SIT-", "SIT-"), t("Business situation", "Situación de negocio"),
          t("Currently, _[current situation]_, which causes _[consequence for the business]_.",
            "Actualmente, _[situación actual]_, lo que provoca _[consecuencia para el negocio]_.")) +
     [enum("kind", "situation-kind"), md("urgency")])
 
 archetype("strategic-goal", "02_rationale", "traceable-object strategic-goal",
-    item("SG-", t("Strategic goal", "Objetivo estratégico"),
+    item(t("GOAL-", "OBJ-"), t("Strategic goal", "Objetivo estratégico"),
          t("_[Strategic goal of the organisation the project contributes to]_.",
            "_[Objetivo estratégico de la organización al que contribuye el proyecto]_.")) +
     [trace("owner", "organization", "detail", max_=1)])
 
 archetype("legal-basis", "02_rationale", "traceable-object legal-basis",
-    item("LB-", t("Legal basis", "Base legal"),
+    item(t("LEG-", "LEG-"), t("Legal basis", "Base legal"),
          t("_[Act, directive or agreement]_ establishes that _[obligation or mandate]_.",
            "_[Norma, directriz o acuerdo]_ establece que _[obligación o mandato]_.")) +
     [enum("kind", "legal-kind"), url("reference"),
      trace("supports", "strategic-goal")])
 
 archetype("outcome", "02_rationale", "traceable-object outcome",
-    item("OUT-", t("Outcome", "Resultado"),
+    item(t("OUT-", "RESU-"), t("Outcome", "Resultado"),
          t("After the project, _[desired future state]_.",
            "Tras el proyecto, _[situación futura deseada]_.")) +
     [trace("addresses", "business-situation"), trace("contributes-to", "strategic-goal")])
 
 archetype("impact", "02_rationale", "traceable-object impact",
-    item("IMP-", t("Impact", "Impacto"),
+    item(t("IMP-", "IMP-"), t("Impact", "Impacto"),
          t("_[The current situation / the solution]_ affects _[processes, people or stakeholders]_ because _[reason]_.",
            "_[La situación actual / la solución]_ afecta a _[procesos, personas o partes interesadas]_ porque _[motivo]_.")) +
     [enum("perspective", "perspective"), enum("area", "impact-area"),
@@ -528,14 +528,14 @@ archetype("impact", "02_rationale", "traceable-object impact",
      trace("affects", "stakeholder organization"), trace("affected-processes", "business-process")])
 
 archetype("benefit", "02_rationale", "traceable-object benefit",
-    item("BEN-", t("Benefit", "Beneficio"),
+    item(t("BEN-", "BEN-"), t("Benefit", "Beneficio"),
          t("_[Measurable improvement]_ for _[beneficiary]_.",
            "_[Mejora medible]_ para _[beneficiario]_.")) +
     [string("indicator"), string("baseline"), string("target"),
      trace("derives-from", "outcome"), trace("perceived-by", "stakeholder organization")])
 
 archetype("success-criterion", "05_conditions", "traceable-object success-criterion",
-    item("SC-", t("Success criterion", "Criterio de éxito"),
+    item(t("SUCC-", "CEXI-"), t("Success criterion", "Criterio de éxito"),
          t("The project will be considered a success if _[measurable criterion]_.",
            "El proyecto se considerará un éxito si _[criterio medible]_.")) +
     [enum("dimension", "dimension"), string("target"),
@@ -543,20 +543,20 @@ archetype("success-criterion", "05_conditions", "traceable-object success-criter
      trace("evaluates", "outcome")])
 
 archetype("assumption", "05_conditions", "traceable-object assumption",
-    item("ASM-", t("Assumption", "Supuesto"),
+    item(t("ASM-", "SUP-"), t("Assumption", "Supuesto"),
          t("It is assumed that _[fact taken as true]_.",
            "Se asume que _[hecho que se da por cierto]_.")) +
     [enum("area", "assumption-area"), enum("validation", "validation", tooltip="validation"),
      trace("may-become", "risk")])
 
 archetype("constraint", "05_conditions", "traceable-object constraint",
-    item("CON-", t("Constraint", "Restricción"),
+    item(t("CON-", "REST-"), t("Constraint", "Restricción"),
          t("The project must _[limit on schedule, budget, resources, products or compliance]_.",
            "El proyecto debe _[límite de plazo, presupuesto, recursos, productos o cumplimiento]_.")) +
     [enum("area", "constraint-area")])
 
 archetype("risk", "05_conditions", "traceable-object risk",
-    item("RSK-", t("Risk", "Riesgo"),
+    item(t("RISK-", "RIES-"), t("Risk", "Riesgo"),
          t("Because of _[condition]_, it might be that _[event]_, which will lead to _[impact]_.",
            "Debido a _[condición]_, podría ocurrir que _[evento]_, lo que provocaría _[impacto]_."),
          tooltip="risk-pattern") +
@@ -568,7 +568,7 @@ archetype("risk", "05_conditions", "traceable-object risk",
      trace("related", "assumption constraint")])
 
 archetype("interdependency", "05_conditions", "traceable-object interdependency",
-    item("DEP-", t("Interdependency", "Interdependencia"),
+    item(t("DEP-", "DEP-"), t("Interdependency", "Interdependencia"),
          t("_[The situation / the solution]_ _[is related to / depends on / can reuse]_ _[other need, initiative, system or service]_.",
            "_[La situación / la solución]_ _[está relacionada con / depende de / puede reutilizar]_ _[otra necesidad, iniciativa, sistema o servicio]_.")) +
     [enum("kind", "dependency-kind"), enum("scope", "dependency-scope"),
@@ -577,14 +577,14 @@ archetype("interdependency", "05_conditions", "traceable-object interdependency"
 # --- Business Case: organisation and solution ---------------------------------
 
 archetype("business-process", "01_organisation", "traceable-object business-process",
-    item("BP-", t("Business process", "Proceso de negocio"),
+    item(t("PROC-", "PROC-"), t("Business process", "Proceso de negocio"),
          t("_[What the process does and who takes part in it]_.",
            "_[Qué hace el proceso y quién interviene en él]_.")) +
     [enum("process-category", "process-category"), string("domain"), string("sub-domain"),
      string("macro-process"), trace("owner", "organization stakeholder", "detail", max_=1)])
 
 archetype("alternative", "03_solution", "traceable-object alternative",
-    item("ALT-", t("Alternative", "Alternativa"),
+    item(t("ALT-", "ALT-"), t("Alternative", "Alternativa"),
          t("_[What the alternative consists of]_.",
            "_[En qué consiste la alternativa]_.")) +
     [enum("kind", "alternative-kind"),
@@ -594,14 +594,14 @@ archetype("alternative", "03_solution", "traceable-object alternative",
      trace("addresses", "business-situation")])
 
 archetype("scope-item", "03_solution", "traceable-object scope-item",
-    item("SCP-", t("Scope item", "Elemento de alcance"),
+    item(t("SCP-", "ALC-"), t("Scope item", "Elemento de alcance"),
          t("The project _[includes / excludes]_ _[output, process, organisation or location]_.",
            "El proyecto _[incluye / excluye]_ _[producto, proceso, organización o ubicación]_.")) +
     [enum("inclusion", "inclusion"), enum("kind", "scope-kind"),
      trace("realises", "alternative")])
 
 archetype("deliverable", "03_solution", "traceable-object deliverable",
-    item("DLV-", t("Deliverable", "Entregable"),
+    item(t("DLV-", "ENTR-"), t("Deliverable", "Entregable"),
          t("_[Deliverable]_, which _[purpose]_.",
            "_[Entregable]_, que _[finalidad]_.")) +
     [enum("kind", "deliverable-kind"),
@@ -610,7 +610,7 @@ archetype("deliverable", "03_solution", "traceable-object deliverable",
     children="deliverable", parents=":Proteus-document section deliverable")
 
 archetype("need", "03_solution", "traceable-object need",
-    item("NEED-", t("Need", "Necesidad"),
+    item(t("NEED-", "NEC-"), t("Need", "Necesidad"),
          t("_[Stakeholder or user group]_ needs _[need]_ in order to _[reason]_.",
            "_[Parte interesada o grupo de usuarios]_ necesita _[necesidad]_ para _[motivo]_.")) +
     [enum("priority", "need-priority", tooltip="need-priority"), md("desired-solution"),
@@ -618,14 +618,14 @@ archetype("need", "03_solution", "traceable-object need",
      trace("stakeholders", "stakeholder organization"), trace("addresses", "business-situation")])
 
 archetype("feature", "03_solution", "traceable-object feature",
-    item("FEAT-", t("Feature", "Funcionalidad"),
+    item(t("FEAT-", "FUN-"), t("Feature", "Funcionalidad"),
          t("_[The output]_ shall allow _[capability]_ so that _[benefit for the users]_.",
            "_[El producto]_ permitirá _[capacidad]_ para que _[beneficio para los usuarios]_."),
          tooltip="feature") +
     [trace("satisfies", "need"), trace("delivered-in", "deliverable")])
 
 archetype("milestone", "04_planning", "traceable-object milestone",
-    item("MS-", t("Milestone", "Hito"),
+    item(t("MILE-", "HITO-"), t("Milestone", "Hito"),
          t("_[Event that marks the milestone]_.",
            "_[Acontecimiento que marca el hito]_.")) +
     [enum("kind", "milestone-kind"), enum("phase", "phase"), date("planned-date", "detail"),
@@ -646,7 +646,7 @@ archetype("cost-item", "04_planning", "cost-item",
     parents="cost-plan")
 
 archetype("resource-requirement", "04_planning", "traceable-object resource-requirement",
-    item("RES-", t("Resource", "Recurso"),
+    item(t("RSRC-", "RECU-"), t("Resource", "Recurso"),
          t("The project requires _[resource]_ for _[purpose]_.",
            "El proyecto requiere _[recurso]_ para _[finalidad]_.")) +
     [enum("kind", "resource-kind"), string("quantity"), md("skills"),
@@ -657,7 +657,7 @@ archetype("resource-requirement", "04_planning", "traceable-object resource-requ
 # --- Project Charter: governance and stakeholders ---------------------------
 
 archetype("role-assignment", "01_organisation", "traceable-object role-assignment",
-    [code("ROLE-")] + header(t("Role assignment", "Asignación de rol")) +
+    [code(t("ROLE-", "ROL-"))] + header(t("Role assignment", "Asignación de rol")) +
     [enum("pm2-role", "pm2-role", "detail"),
      trace("assignee", "stakeholder organization", "detail"),
      md("responsibilities"), md("deviations")])

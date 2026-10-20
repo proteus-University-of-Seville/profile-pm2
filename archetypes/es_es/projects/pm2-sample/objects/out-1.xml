@@ -2,7 +2,7 @@
 <object id="out-1" classes="traceable-object outcome" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>OUT-</prefix>
+      <prefix>RESU-</prefix>
       <number>001</number>
       <suffix></suffix>
     </codeProperty>

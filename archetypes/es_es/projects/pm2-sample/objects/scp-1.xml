@@ -2,7 +2,7 @@
 <object id="scp-1" classes="traceable-object scope-item" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true">
-      <prefix>SCP-</prefix>
+      <prefix>ALC-</prefix>
       <number>001</number>
       <suffix></suffix>
     </codeProperty>
