@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="feat-5" classes="traceable-object feature" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>FEAT-</prefix>
+      <number>005</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Deadline control]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="feature"><![CDATA[The system shall allow the secretariat to set the deadlines of each call and see the final projects that miss them, so that it can act in time.]]></markdownProperty>
+    <traceProperty name="satisfies" category="dependencies" acceptedTargets="need" traceType=":Proteus-dependency">
+      <trace target="need-4" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="delivered-in" category="dependencies" acceptedTargets="deliverable" traceType=":Proteus-dependency">
+      <trace target="dlv-4a" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="feature" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

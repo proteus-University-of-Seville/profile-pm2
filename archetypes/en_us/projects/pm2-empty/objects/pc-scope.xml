@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-scope" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Scope]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-scope-help"/>
+    <child id="pc-scope-in"/>
+    <child id="pc-scope-out"/>
+    <child id="pc-scope-statement"/>
+  </children>
+</object>

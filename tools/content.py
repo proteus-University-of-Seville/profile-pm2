@@ -2,6 +2,7 @@
 from pathlib import Path
 from model import t, DATE
 import business_case
+import project_charter
 from guidance import guidance as guidance_text, GUIDANCE_NAME
 
 # Assets of the basic archetypes, copied into this profile
@@ -101,8 +102,8 @@ def sections(p, prefix, specs, items=None, guidance=True):
 def build_empty(lang, Project, document_values):
     p = Project(lang, "pm2-empty", "pm2-empty",
                 t("PM² project", "Proyecto PM²"),
-                t("Empty PM² project with a Project Initiation Request, a Business Case and the organisations, stakeholders and business processes of the project.",
-                  "Proyecto PM² vacío con una solicitud de inicio, un caso de negocio y las organizaciones, partes interesadas y procesos de negocio del proyecto."))
+                t("Empty PM² project with a Project Initiation Request, a Business Case, a Project Charter and the organisations, stakeholders and business processes of the project.",
+                  "Proyecto PM² vacío con una solicitud de inicio, un caso de negocio, un acta de constitución y las organizaciones, partes interesadas y procesos de negocio del proyecto."))
     approval = p.add("approval", "pir-approval-1")
     revision = p.add("revision", "pir-revision-1")
     control = p.add("document-control", "pir-control", {}, [approval, revision])
@@ -111,6 +112,7 @@ def build_empty(lang, Project, document_values):
     p.document("pir", document_values(lang, {"_args": (PIR_ACRONYM, PIR_NAME, PIR_DESCRIPTION)}),
                [control, request] + secs)
     business_case.empty(p, lang, document_values)
+    project_charter.empty(p, lang, document_values)
     stk = sections(p, "stk", STK_SECTIONS + [business_case.PROCESSES_SECTION])
     p.document("stakeholders", document_values(lang, {"_args": (STK_ACRONYM, STK_NAME, STK_DESCRIPTION)}), stk)
     p.save()
@@ -122,9 +124,9 @@ def build_empty(lang, Project, document_values):
 def build_sample(lang, Project, document_values):
     p = Project(lang, "pm2-sample", "pm2-sample",
                 t("Electronic management of final projects", "Gestión electrónica de TFG y TFM"),
-                t("Sample PM² project: Project Initiation Request and Business Case for the electronic management of the final "
+                t("Sample PM² project: Project Initiation Request, Business Case and Project Charter for the electronic management of the final "
                   "degree and master projects of a school of the University of Seville. People and figures are fictitious.",
-                  "Proyecto PM² de ejemplo: solicitud de inicio y caso de negocio para la gestión electrónica de los trabajos fin "
+                  "Proyecto PM² de ejemplo: solicitud de inicio, caso de negocio y acta de constitución para la gestión electrónica de los trabajos fin "
                   "de grado y fin de máster de una escuela de la Universidad de Sevilla. Las personas y las cifras son ficticias."))
 
     # --- organisations and stakeholders --------------------------------------------------
@@ -147,17 +149,36 @@ def build_sample(lang, Project, document_values):
                 t("Governing body of the school that approves the projects of the school.",
                   "Órgano de gobierno de la escuela que aprueba los proyectos del centro."))
 
-    person = lambda id_, name_, role, category, works_for: p.add(
-        "stakeholder", id_, {":Proteus-name": name_, "role": role, "category": category,
-                             "email": id_.replace("stk-", "") + "@example.us.es", "works-for": [works_for]})
-    po = person("stk-ruiz", "Ruiz Delgado, Marta", t("Director of the school", "Directora de la escuela"), "customer", school)
+    students = org("org-students", t("Student delegation of the school", "Delegación de estudiantes de la escuela"),
+                   t("Body that represents the students of the school.",
+                     "Órgano que representa a los estudiantes de la escuela."))
+
+    def person(id_, name_, role, category, works_for, **extra):
+        values = {":Proteus-name": name_, "role": role, "category": category,
+                  "email": id_.replace("stk-", "") + "@example.us.es", "works-for": [works_for]}
+        values.update({k.replace("_", "-"): v for k, v in extra.items()})
+        return p.add("stakeholder", id_, values)
+
+    po = person("stk-ruiz", "Ruiz Delgado, Marta", t("Director of the school", "Directora de la escuela"), "customer", school,
+                profile=t("Head of the school, she funds the project and chairs the School Board.",
+                          "Directora de la escuela, financia el proyecto y preside la Junta de Escuela."),
+                perceived_problems=t("Delays in the graduation of students and complaints about the procedure.",
+                                     "Retrasos en la titulación de los estudiantes y quejas sobre el procedimiento."))
     initiator = person("stk-herrera", "Herrera Campos, Luis",
-                       t("Deputy director for academic affairs", "Subdirector de ordenación académica"), "customer", school)
+                       t("Deputy director for academic affairs", "Subdirector de ordenación académica"), "customer", school,
+                       profile=t("Responsible for the academic organisation of the school, including the final projects.",
+                                 "Responsable de la ordenación académica de la escuela, incluidos los trabajos fin de estudios."),
+                       perceived_problems=t("Supervisors and committees have no shared view of the status of the final projects.",
+                                            "Tutores y comisiones no tienen una visión compartida del estado de los trabajos."))
     sp = person("stk-ortega", "Ortega Navas, Elena",
                 t("Head of the development service", "Jefa del servicio de desarrollo"), "developer", sic)
     pm = person("stk-molina", "Molina Vega, Javier", t("Project manager", "Jefe de proyecto"), "developer", sic)
     secretary = person("stk-castro", "Castro Lirio, Rocío",
-                       t("Head of the school secretariat", "Jefa de la secretaría de la escuela"), "user", school)
+                       t("Head of the school secretariat", "Jefa de la secretaría de la escuela"), "user", school,
+                       profile=t("Manages the administrative procedure of the final projects with two assistants.",
+                                 "Gestiona el procedimiento administrativo de los trabajos con dos auxiliares."),
+                       perceived_problems=t("Lost documents, missed deadlines and many status enquiries by e-mail.",
+                                            "Documentos perdidos, plazos incumplidos y muchas consultas de estado por correo."))
 
     # --- PIR content -------------------------------------------------------------------
     def item(arch, id_, num, name_, desc, **values):
@@ -328,8 +349,16 @@ def build_sample(lang, Project, document_values):
         "us": us, "school": school, "sic": sic, "board": board, "po": po, "sp": sp, "pm": pm,
         "secretary": secretary, "sit-1": sit1, "sit-2": sit2, "sit-3": sit3, "out-1": out1,
         "out-2": out2, "out-3": out3, "sc-2": sc2, "asm-2": asm2})
+    # The Project Charter links objects of the PIR and the Business Case by id
+    ids = {x: x for x in ("scp-1", "scp-2", "scp-3", "scp-4", "scp-5", "dlv-1", "dlv-2", "dlv-3",
+                          "sc-1", "sc-5", "sc-6", "con-1", "con-2", "con-3", "asm-1", "asm-2", "asm-3",
+                          "rsk-1", "rsk-2", "rsk-3", "rsk-4", "ms-1", "ms-2", "ms-3", "ms-4",
+                          "sit-1", "sit-2", "out-1", "out-2")}
+    ids.update({"cost-plan": "bc-cost-plan", "us": us, "school": school, "sic": sic, "po": po, "sp": sp,
+                "pm": pm, "secretary": secretary, "initiator": initiator, "students": students})
+    project_charter.sample(p, lang, document_values, ids)
     stk = sections(p, "stk", STK_SECTIONS + [business_case.PROCESSES_SECTION],
-                   {"organisations": [us, school, board, sic],
+                   {"organisations": [us, school, board, sic, students],
                     "stakeholders": [po, initiator, secretary, sp, pm],
                     "processes": processes})
     p.document("stakeholders", document_values(lang, {

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-considerations" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Consideraciones sobre el caso de negocio]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-considerations-help"/>
+    <child id="pc-considerations-text"/>
+    <child id="pc-link-sit-1"/>
+  </children>
+</object>

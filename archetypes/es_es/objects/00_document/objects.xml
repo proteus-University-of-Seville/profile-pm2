@@ -7,4 +7,7 @@
   <object id="local-figure" />
   <object id="remote-figure" />
   <object id="symbolic-link" />
+  <object id="document-control" />
+  <object id="approval" />
+  <object id="revision" />
 </objects>

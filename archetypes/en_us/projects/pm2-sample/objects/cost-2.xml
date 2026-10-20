@@ -5,6 +5,7 @@
     <enumProperty name="group" category="general" choices="solution-implementation business-implementation">solution-implementation</enumProperty>
     <enumProperty name="category" category="general" choices="tbd development maintenance support training infrastructure change-management start-up coordination other">maintenance</enumProperty>
     <enumProperty name="nature" category="general" tooltip="cost-nature" choices="other-costs staff">staff</enumProperty>
+    <stringProperty name="budget-line" category="general"><![CDATA[Chapter 1 (staff)]]></stringProperty>
     <floatProperty name="year-1" category="costs">0</floatProperty>
     <floatProperty name="year-2" category="costs">0.2</floatProperty>
     <floatProperty name="year-3" category="costs">0.2</floatProperty>

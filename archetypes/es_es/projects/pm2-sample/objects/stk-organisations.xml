@@ -10,5 +10,6 @@
     <child id="org-school"/>
     <child id="org-board"/>
     <child id="org-sic"/>
+    <child id="org-students"/>
   </children>
 </object>

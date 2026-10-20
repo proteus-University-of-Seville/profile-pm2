@@ -4,6 +4,7 @@
     <stringProperty name=":Proteus-name" category="general">Costes, esfuerzo y fuente de financiación</stringProperty>
     <integerProperty name="first-year" category="detail" tooltip="first-year">2027</integerProperty>
     <markdownProperty name="funding-source" category="detail"><![CDATA[Personal del SIC y de la escuela, con cargo a sus presupuestos ordinarios; el resto de costes, con cargo al plan de transformación digital de la universidad.]]></markdownProperty>
+    <markdownProperty name="previous-investments" category="detail"><![CDATA[Ninguna: es el primer proyecto de la escuela en este ámbito.]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>

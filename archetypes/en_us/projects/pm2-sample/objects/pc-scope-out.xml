@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-scope-out" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Excludes (OUT of scope)]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-scope-out-help"/>
+    <child id="pc-link-scp-4"/>
+    <child id="pc-link-scp-5"/>
+  </children>
+</object>

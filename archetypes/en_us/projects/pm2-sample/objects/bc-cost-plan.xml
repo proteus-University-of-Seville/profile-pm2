@@ -4,6 +4,7 @@
     <stringProperty name=":Proteus-name" category="general">Costs, effort and funding source</stringProperty>
     <integerProperty name="first-year" category="detail" tooltip="first-year">2027</integerProperty>
     <markdownProperty name="funding-source" category="detail"><![CDATA[Staff of the IT services and of the school, funded by their ordinary budgets; other costs funded by the digital transformation plan of the university.]]></markdownProperty>
+    <markdownProperty name="previous-investments" category="detail"><![CDATA[None: it is the first project of the school in this area.]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>

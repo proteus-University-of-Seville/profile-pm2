@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="cost-item" classes="cost-item" acceptedChildren=":Proteus-none" acceptedParents="cost-plan">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Coste]]></stringProperty>
+    <enumProperty name="group" category="general" choices="solution-implementation business-implementation">solution-implementation</enumProperty>
+    <enumProperty name="category" category="general" choices="tbd development maintenance support training infrastructure change-management start-up coordination other">tbd</enumProperty>
+    <enumProperty name="nature" category="general" tooltip="cost-nature" choices="other-costs staff">other-costs</enumProperty>
+    <stringProperty name="budget-line" category="general"><![CDATA[]]></stringProperty>
+    <floatProperty name="year-1" category="costs">0</floatProperty>
+    <floatProperty name="year-2" category="costs">0</floatProperty>
+    <floatProperty name="year-3" category="costs">0</floatProperty>
+    <floatProperty name="year-4" category="costs">0</floatProperty>
+    <floatProperty name="year-5" category="costs">0</floatProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

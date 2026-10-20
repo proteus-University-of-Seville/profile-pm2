@@ -12,7 +12,7 @@
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[The project must comply with the GDPR and the Spanish personal data protection act.]]></markdownProperty>
-    <enumProperty name="area" category="detail" choices="tbd schedule budget resources products decisions compliance organisation external-environment">compliance</enumProperty>
+    <enumProperty name="area" category="detail" choices="tbd schedule budget resources people products technology interfaces decisions compliance security data-protection document-management organisation external-environment">compliance</enumProperty>
     <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="constraint" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

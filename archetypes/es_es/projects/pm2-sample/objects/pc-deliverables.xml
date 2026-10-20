@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-deliverables" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Entregables]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-deliverables-help"/>
+    <child id="dlv-4"/>
+    <child id="pc-link-dlv-2"/>
+    <child id="pc-link-dlv-3"/>
+  </children>
+</object>

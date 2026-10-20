@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-milestones" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Timing and milestones]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-milestones-help"/>
+    <child id="pc-link-ms-1"/>
+    <child id="ms-5"/>
+    <child id="pc-link-ms-2"/>
+    <child id="pc-link-ms-3"/>
+    <child id="pc-link-ms-4"/>
+    <child id="ms-6"/>
+  </children>
+</object>

@@ -157,6 +157,31 @@ ICONS = {
   <rect x="15" y="17" width="18" height="2.5" fill="#FEF9C3"/>
   <rect x="15" y="23" width="11" height="2.5" fill="#FEF9C3"/>
   <rect x="25" y="30" width="8" height="3" fill="#713F12"/>""",
+# --- Project Charter ---
+# person with a speech bubble: a need
+"need": """
+  <circle cx="16" cy="17" r="7" fill="#0369A1"/>
+  <path d="M3 42c0-8 6-13 13-13s13 5 13 13z" fill="#0369A1"/>
+  <path d="M26 4h17a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3h-9l-6 5v-5h-2a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z" fill="#38BDF8"/>
+  <circle cx="30" cy="12.5" r="1.8" fill="#FFFFFF"/>
+  <circle cx="35" cy="12.5" r="1.8" fill="#FFFFFF"/>
+  <circle cx="40" cy="12.5" r="1.8" fill="#FFFFFF"/>""",
+# puzzle piece: a feature of an output
+"feature": """
+  <path d="M8 14h9a5 5 0 1 1 10 0h9v9a5 5 0 1 0 0 10v9H8z" fill="#0D9488"/>
+  <path d="M8 14h9a5 5 0 0 1 10 0h9v9" fill="none" stroke="#5EEAD4" stroke-width="2.5"/>""",
+# toolbox: a resource
+"resource-requirement": """
+  <path d="M17 13v-4a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v4" fill="none" stroke="#475569" stroke-width="3"/>
+  <rect x="5" y="13" width="38" height="28" rx="3" fill="#B91C1C"/>
+  <rect x="5" y="13" width="38" height="9" rx="3" fill="#DC2626"/>
+  <rect x="20" y="19" width="8" height="7" rx="1.5" fill="#FEE2E2"/>""",
+# badge with a person: a role assigned to someone
+"role-assignment": """
+  <rect x="8" y="9" width="32" height="35" rx="4" fill="#6D28D9"/>
+  <rect x="19" y="4" width="10" height="9" rx="2" fill="#475569"/>
+  <circle cx="24" cy="22" r="5.5" fill="#EDE9FE"/>
+  <path d="M14 38c0-6 4.5-9 10-9s10 3 10 9z" fill="#EDE9FE"/>""",
 }
 
 def render(svg_body, size=48):

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-other-stakeholders" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Other stakeholders]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-other-stakeholders-help"/>
+    <child id="pc-link-stk-herrera"/>
+    <child id="pc-link-stk-castro"/>
+    <child id="pc-link-org-students"/>
+  </children>
+</object>

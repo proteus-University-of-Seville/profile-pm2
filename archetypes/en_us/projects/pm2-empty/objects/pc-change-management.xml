@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-change-management" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Change management]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-change-management-help"/>
+    <child id="pc-project-change"/>
+    <child id="pc-configuration"/>
+    <child id="pc-organisational-change"/>
+  </children>
+</object>

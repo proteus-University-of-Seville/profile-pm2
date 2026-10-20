@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<object id="deliverable" classes="traceable-object deliverable" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+<object id="deliverable" classes="traceable-object deliverable" acceptedChildren="deliverable" acceptedParents=":Proteus-document section deliverable">
   <properties>
     <codeProperty name=":Proteus-code" category="general" inmutable="true"><prefix><![CDATA[DLV-]]></prefix><number>001</number><suffix><![CDATA[]]></suffix></codeProperty>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Deliverable]]></stringProperty>

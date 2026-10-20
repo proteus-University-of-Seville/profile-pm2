@@ -180,33 +180,37 @@ CONTAINER_HELP = {
 }
 
 
-def tree(p, prefix, specs, items, guidance):
-    """Sections (and subsections) of a document, with their guidance and items."""
+def tree(p, prefix, specs, items, guidance, objects=None, container_help=None):
+    """Sections (and subsections) of a document, with their guidance and items.
+    objects and container_help default to those of the Business Case."""
+    objects = OBJECTS if objects is None else objects
+    container_help = CONTAINER_HELP if container_help is None else container_help
     ids = []
     for key, title, help_, subs in specs:
         kids = []
         if guidance:
             kids.append(p.add("comment", f"{prefix}-{key}-help",
                               {":Proteus-name": GUIDANCE_NAME,
-                               "text": guidance_text(help_ or CONTAINER_HELP[key], OBJECTS.get(key))}))
+                               "text": guidance_text(help_ or container_help[key], objects.get(key))}))
         kids += items.get(key, [])
-        kids += tree(p, prefix, subs, items, guidance)
+        kids += tree(p, prefix, subs, items, guidance, objects, container_help)
         ids.append(p.add("section", f"{prefix}-{key}", {":Proteus-name": title}, kids))
     return ids
 
 
-def link(p, target):
+def link(p, target, prefix="bc"):
     """Symbolic link to an object of another document."""
-    return p.add("symbolic-link", f"bc-link-{target}", {"link": [target]})
+    return p.add("symbolic-link", f"{prefix}-link-{target}", {"link": [target]})
 
 
-def references(p, items, guidance):
-    key, title, help_ = REFERENCES
+def references(p, items, guidance, prefix="bc", spec=None, objects=None):
+    key, title, help_ = REFERENCES if spec is None else spec
+    objects = OBJECTS if objects is None else objects
     kids = []
     if guidance:
-        kids.append(p.add("comment", f"bc-{key}-help",
-                          {":Proteus-name": GUIDANCE_NAME, "text": guidance_text(help_, OBJECTS[key])}))
-    return p.add("appendix", f"bc-{key}", {":Proteus-name": title}, kids + items)
+        kids.append(p.add("comment", f"{prefix}-{key}-help",
+                          {":Proteus-name": GUIDANCE_NAME, "text": guidance_text(help_, objects[key])}))
+    return p.add("appendix", f"{prefix}-{key}", {":Proteus-name": title}, kids + items)
 
 
 def empty(p, lang, document_values):
@@ -388,17 +392,17 @@ def sample(p, lang, document_values, ids):
                 kind="training", contributes_to=[ids["out-3"]])
     ms1 = item("milestone", "ms-1", "001", t("Project start", "Inicio del proyecto"),
                t("Kick-off meeting with the school and the IT services.", "Reunión de lanzamiento con la escuela y el SIC."),
-               kind="start", planned_date="2027-01-11")
+               kind="start", phase="initiating", planned_date="2027-01-11")
     ms2 = item("milestone", "ms-2", "002", t("Procedure approved", "Procedimiento aprobado"),
                t("The School Board approves the redesigned procedure.", "La Junta de Escuela aprueba el procedimiento rediseñado."),
-               planned_date="2027-04-30", delivers=[dlv2])
+               phase="executing", planned_date="2027-04-30", delivers=[dlv2])
     ms3 = item("milestone", "ms-3", "003", t("Pilot version", "Versión piloto"),
                t("The pilot version is tested with a group of supervisors.", "La versión piloto se prueba con un grupo de tutores."),
-               planned_date="2027-07-15")
+               phase="executing", planned_date="2027-07-15")
     ms4 = item("milestone", "ms-4", "004", t("Go live", "Puesta en producción"),
                t("The system is in production for the first call of the 2027-28 academic year.",
                  "El sistema está en producción para la primera convocatoria del curso 2027-28."),
-               kind="delivery", planned_date="2027-09-15", delivers=[dlv1, dlv3])
+               kind="delivery", phase="executing", planned_date="2027-09-15", delivers=[dlv1, dlv3])
     rsk4 = item("risk", "rsk-4", "004", t("Integration with the signature service", "Integración con la firma electrónica"),
                 t("Because of the planned upgrade of the electronic signature service, it might be that its "
                   "interface changes during the project, which will lead to delays in the integration.",
@@ -418,8 +422,12 @@ def sample(p, lang, document_values, ids):
                   "La solución puede hacerse reutilizable para el resto de centros de la universidad."),
                 kind="it-sharing", scope="internal", related=[dlv1])
 
+    staff_line = t("Chapter 1 (staff)", "Capítulo 1 (personal)")
+    goods_line = t("Chapter 2 (goods and services)", "Capítulo 2 (bienes y servicios)")
+
     def cost(id_, name_, group, category, nature, *years):
-        v = {":Proteus-name": name_, "group": group, "category": category, "nature": nature}
+        v = {":Proteus-name": name_, "group": group, "category": category, "nature": nature,
+             "budget-line": staff_line if nature == "staff" else goods_line}
         v.update({f"year-{i + 1}": str(y) for i, y in enumerate(years)})
         return p.add("cost-item", id_, v)
     costs = [
@@ -440,6 +448,8 @@ def sample(p, lang, document_values, ids):
     ]
     plan = p.add("cost-plan", "bc-cost-plan", {
         "first-year": "2027",
+        "previous-investments": t("None: it is the first project of the school in this area.",
+                                  "Ninguna: es el primer proyecto de la escuela en este ámbito."),
         "funding-source": t("Staff of the IT services and of the school, funded by their ordinary budgets; other "
                             "costs funded by the digital transformation plan of the university.",
                             "Personal del SIC y de la escuela, con cargo a sus presupuestos ordinarios; el resto de "

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-description" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Descripción del proyecto]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-description-help"/>
+    <child id="pc-scope"/>
+    <child id="pc-success"/>
+    <child id="pc-needs"/>
+    <child id="pc-deliverables"/>
+    <child id="pc-features"/>
+    <child id="pc-constraints"/>
+    <child id="pc-assumptions"/>
+    <child id="pc-risks"/>
+  </children>
+</object>

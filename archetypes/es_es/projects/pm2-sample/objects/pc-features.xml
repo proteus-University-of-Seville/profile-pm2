@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc-features" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Funcionalidades]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-features-help"/>
+    <child id="feat-1"/>
+    <child id="feat-2"/>
+    <child id="feat-3"/>
+    <child id="feat-4"/>
+    <child id="feat-5"/>
+    <child id="feat-6"/>
+  </children>
+</object>

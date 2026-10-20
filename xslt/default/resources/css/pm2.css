@@ -32,6 +32,10 @@
 .proteus_table.interdependency    { --accent: #a21caf; }
 .proteus_table.cost-plan          { --accent: #ca8a04; }
 .proteus_table.cost-item          { --accent: #ca8a04; }
+.proteus_table.need               { --accent: #0369a1; }
+.proteus_table.feature            { --accent: #0d9488; }
+.proteus_table.resource-requirement { --accent: #b91c1c; }
+.proteus_table.role-assignment    { --accent: #6d28d9; }
 
 table.proteus_table > tbody > tr.risk_escalation > td {
   color: #dc2626;
@@ -180,4 +184,14 @@ table.cost_table tr.cost_total td {
 table.cost_table tbody > tr[data-proteus-id]:hover {
   background: #fafbfc;
   cursor: pointer;
+}
+
+table.proteus_table > tbody > tr > td table.cost_table td.budget_line {
+  text-align: left;
+  color: #5b6675;
+}
+
+table.proteus_table > tbody > tr > td table.cost_table td.cost_row_total {
+  font-weight: 600;
+  background: #fafaf9;
 }

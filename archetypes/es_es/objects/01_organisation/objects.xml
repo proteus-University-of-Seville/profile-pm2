@@ -2,10 +2,8 @@
 <objects>
   <object id="organization" />
   <object id="stakeholder" />
-  <object id="meeting" />
   <object id="business-process" />
+  <object id="role-assignment" />
+  <object id="meeting" />
   <object id="initiation-request" />
-  <object id="document-control" />
-  <object id="approval" />
-  <object id="revision" />
 </objects>

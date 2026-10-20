@@ -2,8 +2,7 @@
 <objects>
   <object id="alternative" />
   <object id="scope-item" />
+  <object id="need" />
+  <object id="feature" />
   <object id="deliverable" />
-  <object id="milestone" />
-  <object id="cost-plan" />
-  <object id="cost-item" />
 </objects>

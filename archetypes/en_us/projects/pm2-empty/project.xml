@@ -4,12 +4,13 @@
     <stringProperty name=":Proteus-name" category="general"><![CDATA[PM² project]]></stringProperty>
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
-    <markdownProperty name="description" category="detail"><![CDATA[Empty PM² project with a Project Initiation Request, a Business Case and the organisations, stakeholders and business processes of the project.]]></markdownProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Empty PM² project with a Project Initiation Request, a Business Case, a Project Charter and the organisations, stakeholders and business processes of the project.]]></markdownProperty>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <documents>
     <document id="pir"/>
     <document id="bc"/>
+    <document id="pc"/>
     <document id="stakeholders"/>
   </documents>
 </project>

@@ -26,7 +26,7 @@ def prop_xml(spec, lang, value=None):
     if kind == "code":
         return (f'<codeProperty {a} inmutable="true"><prefix><![CDATA[{attrs["prefix"]}]]></prefix>'
                 f'<number>{v}</number><suffix><![CDATA[]]></suffix></codeProperty>')
-    if kind in ("string", "markdown", "url"):
+    if kind in ("string", "markdown", "url", "file"):
         return f'<{kind}Property {a}><![CDATA[{v}]]></{kind}Property>'
     if kind == "enum":
         return f'<enumProperty {a} choices="{" ".join(ENUMS[attrs["choices"]])}">{v}</enumProperty>'

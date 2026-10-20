@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pc" classes=":Proteus-document" acceptedChildren=":Proteus-any">
+  <properties>
+    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[PC]]></stringProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Project Charter]]></stringProperty>
+    <stringProperty name="version" category="general"><![CDATA[0.1]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <enumProperty name="sensitivity" category="general" choices="public sensitive-basic sensitive-high">public</enumProperty>
+    <traceProperty name="document-author" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <traceProperty name="project-manager" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <stringProperty name="document-location" category="general" tooltip="document-location"><![CDATA[]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Description of the project approved at the end of the initiating phase: scope, deliverables, cost, timing, approach and governance (PM² artefact).]]></markdownProperty>
+    <traceProperty name="prepared-for" category="dependencies" acceptedTargets="organization" traceType=":Proteus-dependency"/>
+    <traceProperty name="prepared-by" category="dependencies" acceptedTargets="organization" traceType=":Proteus-author"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pc-control"/>
+    <child id="pc-summary"/>
+    <child id="pc-considerations"/>
+    <child id="pc-description"/>
+    <child id="pc-cost-timing"/>
+    <child id="pc-approach"/>
+    <child id="pc-governance"/>
+    <child id="pc-references"/>
+  </children>
+</object>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="feat-6" classes="traceable-object feature" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>FEAT-</prefix>
+      <number>006</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Estadísticas]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="feature"><![CDATA[El sistema permitirá a la dirección obtener estadísticas por titulación, departamento y convocatoria, para que pueda planificar la oferta de temas.]]></markdownProperty>
+    <traceProperty name="satisfies" category="dependencies" acceptedTargets="need" traceType=":Proteus-dependency">
+      <trace target="need-5" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="delivered-in" category="dependencies" acceptedTargets="deliverable" traceType=":Proteus-dependency">
+      <trace target="dlv-4b" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="feature" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

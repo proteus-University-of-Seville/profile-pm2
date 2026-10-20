@@ -12,7 +12,8 @@
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[The system is in production for the first call of the 2027-28 academic year.]]></markdownProperty>
-    <enumProperty name="kind" category="detail" choices="milestone start delivery">delivery</enumProperty>
+    <enumProperty name="kind" category="detail" choices="milestone start phase-end delivery">delivery</enumProperty>
+    <enumProperty name="phase" category="detail" choices="tbd initiating planning executing closing">executing</enumProperty>
     <dateProperty name="planned-date" category="detail">2027-09-15</dateProperty>
     <traceProperty name="delivers" category="dependencies" acceptedTargets="deliverable" traceType=":Proteus-dependency">
       <trace target="dlv-1" traceType=":Proteus-dependency"/>

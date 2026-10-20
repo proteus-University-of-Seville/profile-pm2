@@ -8,7 +8,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="text" category="detail"><![CDATA[Total cost of ownership for at least 5 years: add a **cost** to the cost plan for each concept, with staff costs in FTE and other costs in k€, and state the funding source.
 
-*Objects to use:* **Cost plan** (*Solution* tab), **Cost** (context menu of the cost plan).]]></markdownProperty>
+*Objects to use:* **Cost plan** (*Planning* tab), **Cost** (context menu of the cost plan).]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

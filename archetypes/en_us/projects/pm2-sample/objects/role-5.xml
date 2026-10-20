@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="role-5" classes="traceable-object role-assignment" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>ROLE-</prefix>
+      <number>005</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Steering committee]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <enumProperty name="pm2-role" category="detail" choices="tbd agb psc po bm sp pm big ur pct pso">psc</enumProperty>
+    <traceProperty name="assignee" category="detail" acceptedTargets="stakeholder organization" traceType=":Proteus-dependency">
+      <trace target="stk-ruiz" traceType=":Proteus-dependency"/>
+      <trace target="stk-castro" traceType=":Proteus-dependency"/>
+      <trace target="stk-ortega" traceType=":Proteus-dependency"/>
+      <trace target="stk-molina" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <markdownProperty name="responsibilities" category="detail"><![CDATA[Steers the project and approves the changes of scope, budget and milestones.]]></markdownProperty>
+    <markdownProperty name="deviations" category="detail"><![CDATA[]]></markdownProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="role-assignment" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

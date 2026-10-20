@@ -1,13 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<object
-  id="stakeholder"
-  classes="traceable-object stakeholder"
-  acceptedChildren=":Proteus-none"
->
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="stakeholder" classes="traceable-object stakeholder" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
   <properties>
-    <stringProperty name=":Proteus-name"><![CDATA[Family name, First name]]></stringProperty>
-    <dateProperty name=":Proteus-date">2024-09-01</dateProperty>
-    <stringProperty name="version"><![CDATA[1.0]]></stringProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Surname, Name]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <stringProperty name="role" category="detail"><![CDATA[]]></stringProperty>
@@ -16,8 +12,10 @@
     <stringProperty name="email" category="detail"><![CDATA[]]></stringProperty>
     <traceProperty name="works-for" category="detail" acceptedTargets="organization" traceType=":Proteus-works-for"/>
     <fileProperty name="photo" category="detail" tooltip="file-info"><![CDATA[stakeholder_photo.png]]></fileProperty>
+    <markdownProperty name="profile" category="detail"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="perceived-problems" category="detail" tooltip="perceived-problems"><![CDATA[]]></markdownProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="stakeholder" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
-
-  <children />
+  <children/>
 </object>

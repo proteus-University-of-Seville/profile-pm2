@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="dlv-4b" classes="traceable-object deliverable" acceptedChildren="deliverable" acceptedParents=":Proteus-document section deliverable">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>DLV-</prefix>
+      <number>006</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Committee module]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Module for scheduling the defences and recording the grades, which the committees use.]]></markdownProperty>
+    <enumProperty name="kind" category="detail" choices="tbd process information-system policy service platform plan event training other">information-system</enumProperty>
+    <traceProperty name="within" category="dependencies" acceptedTargets="scope-item" traceType=":Proteus-dependency"/>
+    <traceProperty name="contributes-to" category="dependencies" acceptedTargets="outcome" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="deliverable" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="ms-5" classes="traceable-object milestone" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>MS-</prefix>
+      <number>005</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Plan de trabajo aprobado]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[El comité de dirección aprueba el plan de trabajo del proyecto.]]></markdownProperty>
+    <enumProperty name="kind" category="detail" choices="milestone start phase-end delivery">phase-end</enumProperty>
+    <enumProperty name="phase" category="detail" choices="tbd initiating planning executing closing">planning</enumProperty>
+    <dateProperty name="planned-date" category="detail">2027-02-15</dateProperty>
+    <traceProperty name="delivers" category="dependencies" acceptedTargets="deliverable" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="milestone" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

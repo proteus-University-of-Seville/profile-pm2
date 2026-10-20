@@ -32,7 +32,12 @@ ENUMS = {
     "scope-kind": ["tbd", "output", "process", "organisation", "location", "other"],
     "deliverable-kind": ["tbd", "process", "information-system", "policy", "service", "platform",
                          "plan", "event", "training", "other"],
-    "milestone-kind": ["milestone", "start", "delivery"],
+    "milestone-kind": ["milestone", "start", "phase-end", "delivery"],
+    "phase": ["tbd", "initiating", "planning", "executing", "closing"],
+    "need-priority": ["tbd", "essential", "desirable", "optional"],
+    "resource-kind": ["tbd", "staff", "equipment", "facilities", "tools", "other"],
+    "pm2-role": ["tbd", "agb", "psc", "po", "bm", "sp", "pm", "big", "ur", "pct", "pso"],
+    "stakeholder-category": ["tbd", "customer", "developer", "user"],
     "dependency-kind": ["tbd", "interrelation", "dependency", "synergy", "it-reuse", "it-request",
                         "it-sharing"],
     "dependency-scope": ["tbd", "internal", "external"],
@@ -45,8 +50,10 @@ ENUMS = {
     "assumption-area": ["tbd", "business", "technology", "resources", "organisation",
                         "scope", "expectations", "schedule"],
     "validation": ["not-validated", "validated", "invalidated"],
-    "constraint-area": ["tbd", "schedule", "budget", "resources", "products", "decisions",
-                        "compliance", "organisation", "external-environment"],
+    "constraint-area": ["tbd", "schedule", "budget", "resources", "people", "products",
+                        "technology", "interfaces", "decisions", "compliance", "security",
+                        "data-protection", "document-management", "organisation",
+                        "external-environment"],
     "risk-category": ["tbd", "business", "staffing", "contractor", "legal", "technical", "other"],
     "risk-status": ["proposed", "assessing", "awaiting-approval", "approved", "rejected", "closed"],
     "level": ["tbd", "very-low", "low", "medium", "high", "very-high"],
@@ -174,6 +181,31 @@ CHOICE_LABELS = {
     "start-up": t("Start-up costs", "Costes de puesta en marcha"),
     "other-costs": t("Other costs (k€)", "Otros costes (k€)"),
     "staff": t("Staff (FTE)", "Personal (ETC)"),
+    # Project Charter
+    "phase-end": t("End of phase", "Fin de fase"),
+    "initiating": t("Initiating", "Inicio"),
+    "planning": t("Planning", "Planificación"),
+    "executing": t("Executing", "Ejecución"),
+    "closing": t("Closing", "Cierre"),
+    "essential": t("Essential", "Imprescindible"),
+    "desirable": t("Desirable", "Deseable"),
+    "optional": t("Optional", "Opcional"),
+    "equipment": t("Equipment", "Equipamiento"),
+    "facilities": t("Facilities", "Instalaciones"),
+    "tools": t("Support tools", "Herramientas de apoyo"),
+    "agb": t("Appropriate Governance Body (AGB)", "Órgano de gobierno competente (AGB)"),
+    "psc": t("Project Steering Committee (PSC)", "Comité de dirección del proyecto (PSC)"),
+    "po": t("Project Owner (PO)", "Propietario del proyecto (PO)"),
+    "bm": t("Business Manager (BM)", "Responsable de negocio (BM)"),
+    "sp": t("Solution Provider (SP)", "Proveedor de la solución (SP)"),
+    "pm": t("Project Manager (PM)", "Jefe de proyecto (PM)"),
+    "big": t("Business Implementation Group (BIG)", "Grupo de implantación en el negocio (BIG)"),
+    "ur": t("User Representatives (UR)", "Representantes de los usuarios (UR)"),
+    "pct": t("Project Core Team (PCT)", "Equipo central del proyecto (PCT)"),
+    "pso": t("Project Support Office (PSO)", "Oficina de apoyo al proyecto (PSO)"),
+    "interfaces": t("Interfaces", "Interfaces"),
+    "security": t("Security", "Seguridad"),
+    "data-protection": t("Data protection", "Protección de datos"),
 }
 
 # ---------------------------------------------------------------------------
@@ -261,6 +293,28 @@ PROP_NAMES = {
     "year-3": t("Year 3", "Año 3"),
     "year-4": t("Year 4", "Año 4"),
     "year-5": t("Year 5", "Año 5"),
+    # Project Charter
+    "budget-line": t("Budget line", "Partida presupuestaria"),
+    "previous-investments": t("Previous investments", "Inversiones previas"),
+    "phase": t("Phase", "Fase"),
+    "stakeholders": t("Stakeholders", "Partes interesadas"),
+    "desired-solution": t("Desired solution", "Solución deseada"),
+    "justification": t("Justification", "Justificación"),
+    "current-handling": t("How it is addressed today", "Cómo se aborda hoy"),
+    "priority": t("Priority", "Prioridad"),
+    "satisfies": t("Satisfies", "Satisface"),
+    "delivered-in": t("Delivered in", "Se entrega en"),
+    "quantity": t("Quantity", "Cantidad"),
+    "skills": t("Skills and experience", "Conocimientos y experiencia"),
+    "acquisition": t("How it will be obtained", "Cómo se obtendrá"),
+    "provided-by": t("Provided by", "Aportado por"),
+    "responsible": t("Responsible", "Responsable"),
+    "pm2-role": t("PM² role", "Rol PM²"),
+    "assignee": t("Assigned to", "Asignado a"),
+    "responsibilities": t("Responsibilities", "Responsabilidades"),
+    "deviations": t("Deviations from the standard", "Desviaciones respecto al estándar"),
+    "profile": t("Profile", "Perfil"),
+    "perceived-problems": t("Perceived problems", "Problemas percibidos"),
 }
 
 PROP_CATEGORIES = {
@@ -289,6 +343,12 @@ TOOLTIPS = {
                 "La alternativa recomendada, que se describe en la solución."),
     "first-year": t("Year of the first column of the cost tables; costs are given for 5 years.",
                     "Año de la primera columna de las tablas de costes; los costes se dan para 5 años."),
+    "need-priority": t("Relative importance of the need from the point of view of the stakeholders: essential needs must be addressed, desirable ones should be.",
+                       "Importancia relativa de la necesidad desde el punto de vista de las partes interesadas: las imprescindibles deben abordarse y las deseables, si es posible."),
+    "feature": t("High level capability of an output: what is needed and why, not how it will be implemented.",
+                 "Capacidad de alto nivel de un producto: qué se necesita y por qué, no cómo se implementará."),
+    "perceived-problems": t("Key problems that the stakeholder perceives and that the solution should address.",
+                            "Problemas clave que percibe la parte interesada y que debería abordar la solución."),
     "cost-nature": t("Staff costs are given in full-time equivalents (FTE), other costs in thousands of euros (k€).",
                      "Los costes de personal se dan en equivalentes a tiempo completo (ETC) y el resto en miles de euros (k€)."),
 }
@@ -316,6 +376,10 @@ CLASSES = {
     "interdependency": t("Interdependency", "Interdependencia"),
     "cost-plan": t("Cost\\nplan", "Plan de\\ncostes"),
     "cost-item": t("Cost", "Coste"),
+    "need": t("Need", "Necesidad"),
+    "feature": t("Feature", "Funcionalidad"),
+    "resource-requirement": t("Resource", "Recurso"),
+    "role-assignment": t("Role\\nassignment", "Asignación\\nde rol"),
 }
 
 CATEGORIES = {
@@ -323,6 +387,7 @@ CATEGORIES = {
     "organisation": t("Organisation", "Organización"),
     "rationale": t("Rationale", "Justificación"),
     "solution": t("Solution", "Solución"),
+    "planning": t("Planning", "Planificación"),
     "conditions": t("Conditions", "Condiciones"),
     "references": t("References", "Referencias"),
 }
@@ -332,16 +397,16 @@ CATEGORIES = {
 # Second-level archetypes (approval, revision) have no button but must be listed.
 TABS = {
     "00_document": ["section", "appendix", "paragraph", "comment", "local-figure",
-                    "remote-figure", "symbolic-link"],
-    "01_organisation": ["organization", "stakeholder", "meeting", "business-process",
-                        "initiation-request", "document-control", "approval", "revision"],
+                    "remote-figure", "symbolic-link", "document-control", "approval", "revision"],
+    "01_organisation": ["organization", "stakeholder", "business-process", "role-assignment",
+                        "meeting", "initiation-request"],
     "02_rationale": ["business-situation", "strategic-goal", "legal-basis", "outcome",
                      "impact", "benefit"],
-    "03_solution": ["alternative", "scope-item", "deliverable", "milestone", "cost-plan",
-                    "cost-item"],
-    "04_conditions": ["success-criterion", "assumption", "constraint", "risk",
+    "03_solution": ["alternative", "scope-item", "need", "feature", "deliverable"],
+    "04_planning": ["milestone", "resource-requirement", "cost-plan", "cost-item"],
+    "05_conditions": ["success-criterion", "assumption", "constraint", "risk",
                       "interdependency"],
-    "05_references": ["glossary-item", "bibliography-item", "traceability-matrix"],
+    "06_references": ["glossary-item", "bibliography-item", "traceability-matrix"],
 }
 
 UNITS = {"person-day": t("person-days", "días-persona")}
@@ -367,6 +432,7 @@ XSLT_LABELS = {
     "xslt.total_staff": t("Total staff (FTE)", "Total personal (ETC)"),
     "xslt.total_other": t("Total other costs (k€)", "Total otros costes (k€)"),
     "xslt.cost_concept": t("Cost", "Coste"),
+    "xslt.cost_total": t("Total", "Total"),
     "xslt.unit_fte": t(" (FTE)", " (ETC)"),
     "xslt.unit_keur": t(" (k€)", " (k€)"),
 }
@@ -468,7 +534,7 @@ archetype("benefit", "02_rationale", "traceable-object benefit",
     [string("indicator"), string("baseline"), string("target"),
      trace("derives-from", "outcome"), trace("perceived-by", "stakeholder organization")])
 
-archetype("success-criterion", "04_conditions", "traceable-object success-criterion",
+archetype("success-criterion", "05_conditions", "traceable-object success-criterion",
     item("SC-", t("Success criterion", "Criterio de éxito"),
          t("The project will be considered a success if _[measurable criterion]_.",
            "El proyecto se considerará un éxito si _[criterio medible]_.")) +
@@ -476,20 +542,20 @@ archetype("success-criterion", "04_conditions", "traceable-object success-criter
      boolean("critical", tooltip="critical"), enum("applies-to", "applies-to"),
      trace("evaluates", "outcome")])
 
-archetype("assumption", "04_conditions", "traceable-object assumption",
+archetype("assumption", "05_conditions", "traceable-object assumption",
     item("ASM-", t("Assumption", "Supuesto"),
          t("It is assumed that _[fact taken as true]_.",
            "Se asume que _[hecho que se da por cierto]_.")) +
     [enum("area", "assumption-area"), enum("validation", "validation", tooltip="validation"),
      trace("may-become", "risk")])
 
-archetype("constraint", "04_conditions", "traceable-object constraint",
+archetype("constraint", "05_conditions", "traceable-object constraint",
     item("CON-", t("Constraint", "Restricción"),
          t("The project must _[limit on schedule, budget, resources, products or compliance]_.",
            "El proyecto debe _[límite de plazo, presupuesto, recursos, productos o cumplimiento]_.")) +
     [enum("area", "constraint-area")])
 
-archetype("risk", "04_conditions", "traceable-object risk",
+archetype("risk", "05_conditions", "traceable-object risk",
     item("RSK-", t("Risk", "Riesgo"),
          t("Because of _[condition]_, it might be that _[event]_, which will lead to _[impact]_.",
            "Debido a _[condición]_, podría ocurrir que _[evento]_, lo que provocaría _[impacto]_."),
@@ -501,7 +567,7 @@ archetype("risk", "04_conditions", "traceable-object risk",
      enum("response-strategy", "response-strategy"), md("actions"), boolean("escalation"),
      trace("related", "assumption constraint")])
 
-archetype("interdependency", "04_conditions", "traceable-object interdependency",
+archetype("interdependency", "05_conditions", "traceable-object interdependency",
     item("DEP-", t("Interdependency", "Interdependencia"),
          t("_[The situation / the solution]_ _[is related to / depends on / can reuse]_ _[other need, initiative, system or service]_.",
            "_[La situación / la solución]_ _[está relacionada con / depende de / puede reutilizar]_ _[otra necesidad, iniciativa, sistema o servicio]_.")) +
@@ -539,38 +605,84 @@ archetype("deliverable", "03_solution", "traceable-object deliverable",
          t("_[Deliverable]_, which _[purpose]_.",
            "_[Entregable]_, que _[finalidad]_.")) +
     [enum("kind", "deliverable-kind"),
-     trace("within", "scope-item"), trace("contributes-to", "outcome")])
+     trace("within", "scope-item"), trace("contributes-to", "outcome")],
+    # a deliverable may be composed of sub-deliverables
+    children="deliverable", parents=":Proteus-document section deliverable")
 
-archetype("milestone", "03_solution", "traceable-object milestone",
+archetype("need", "03_solution", "traceable-object need",
+    item("NEED-", t("Need", "Necesidad"),
+         t("_[Stakeholder or user group]_ needs _[need]_ in order to _[reason]_.",
+           "_[Parte interesada o grupo de usuarios]_ necesita _[necesidad]_ para _[motivo]_.")) +
+    [enum("priority", "need-priority", tooltip="need-priority"), md("desired-solution"),
+     md("justification"), md("current-handling"),
+     trace("stakeholders", "stakeholder organization"), trace("addresses", "business-situation")])
+
+archetype("feature", "03_solution", "traceable-object feature",
+    item("FEAT-", t("Feature", "Funcionalidad"),
+         t("_[The output]_ shall allow _[capability]_ so that _[benefit for the users]_.",
+           "_[El producto]_ permitirá _[capacidad]_ para que _[beneficio para los usuarios]_."),
+         tooltip="feature") +
+    [trace("satisfies", "need"), trace("delivered-in", "deliverable")])
+
+archetype("milestone", "04_planning", "traceable-object milestone",
     item("MS-", t("Milestone", "Hito"),
          t("_[Event that marks the milestone]_.",
            "_[Acontecimiento que marca el hito]_.")) +
-    [enum("kind", "milestone-kind"), date("planned-date", "detail"),
+    [enum("kind", "milestone-kind"), enum("phase", "phase"), date("planned-date", "detail"),
      trace("delivers", "deliverable")])
 
-archetype("cost-plan", "03_solution", "cost-plan",
+archetype("cost-plan", "04_planning", "cost-plan",
     [name(t("Costs, effort and funding source", "Costes, esfuerzo y fuente de financiación")),
-     integer("first-year", DATE[:4], tooltip="first-year"), md("funding-source")],
+     integer("first-year", DATE[:4], tooltip="first-year"), md("funding-source"),
+     md("previous-investments")],
     children="cost-item")
 
-archetype("cost-item", "03_solution", "cost-item",
+archetype("cost-item", "04_planning", "cost-item",
     [name(t("Cost", "Coste")),
      enum("group", "cost-group", "general"), enum("category", "cost-category", "general"),
-     enum("nature", "cost-nature", "general", tooltip="cost-nature")] +
+     enum("nature", "cost-nature", "general", tooltip="cost-nature"),
+     string("budget-line", "", "general")] +
     [number(f"year-{i}", "0", "costs") for i in range(1, 6)],
     parents="cost-plan")
 
-archetype("document-control", "01_organisation", "document-control",
+archetype("resource-requirement", "04_planning", "traceable-object resource-requirement",
+    item("RES-", t("Resource", "Recurso"),
+         t("The project requires _[resource]_ for _[purpose]_.",
+           "El proyecto requiere _[recurso]_ para _[finalidad]_.")) +
+    [enum("kind", "resource-kind"), string("quantity"), md("skills"),
+     enum("phase", "phase"), md("acquisition"),
+     trace("provided-by", "organization", "detail", max_=1),
+     trace("responsible", "stakeholder", "detail", max_=1)])
+
+# --- Project Charter: governance and stakeholders ---------------------------
+
+archetype("role-assignment", "01_organisation", "traceable-object role-assignment",
+    [code("ROLE-")] + header(t("Role assignment", "Asignación de rol")) +
+    [enum("pm2-role", "pm2-role", "detail"),
+     trace("assignee", "stakeholder organization", "detail"),
+     md("responsibilities"), md("deviations")])
+
+# The stakeholder of basic, generated here to add the profile and the
+# perceived problems that the Project Charter asks for
+archetype("stakeholder", "01_organisation", "traceable-object stakeholder",
+    header(t("Surname, Name", "Apellidos, Nombre")) +
+    [string("role"), enum("category", "stakeholder-category"),
+     string("phone-number"), string("email"),
+     trace("works-for", "organization", "detail", ":Proteus-works-for"),
+     ("file", "photo", "detail", {"tooltip": "file-info"}, "stakeholder_photo.png"),
+     md("profile"), md("perceived-problems", tooltip="perceived-problems")])
+
+archetype("document-control", "00_document", "document-control",
     [name(t("Document control", "Control del documento"))],
     children="approval revision")
 
-archetype("approval", "01_organisation", "approval",
+archetype("approval", "00_document", "approval",
     [name(t("Approval", "Aprobación")), date(),
      trace("approver", "stakeholder", "general", max_=1),
      enum("action", "approval-action", "general")],
     parents="document-control")
 
-archetype("revision", "01_organisation", "revision",
+archetype("revision", "00_document", "revision",
     [name(t("Revision", "Revisión")), date(),
      string("revision", "0.1", "general"),
      trace("created-by", "stakeholder", "general", max_=1),

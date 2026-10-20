@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="res-1" classes="traceable-object resource-requirement" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>RES-</prefix>
+      <number>001</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Equipo de desarrollo]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[El proyecto requiere dos desarrolladores para el desarrollo y la integración del sistema.]]></markdownProperty>
+    <enumProperty name="kind" category="detail" choices="tbd staff equipment facilities tools other">staff</enumProperty>
+    <stringProperty name="quantity" category="detail"><![CDATA[2 personas]]></stringProperty>
+    <markdownProperty name="skills" category="detail"><![CDATA[Desarrollo web con las tecnologías corporativas; integración con los servicios de administración electrónica.]]></markdownProperty>
+    <enumProperty name="phase" category="detail" choices="tbd initiating planning executing closing">executing</enumProperty>
+    <markdownProperty name="acquisition" category="detail"><![CDATA[Asignados por el SIC.]]></markdownProperty>
+    <traceProperty name="provided-by" category="detail" acceptedTargets="organization" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="org-sic" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="responsible" category="detail" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="stk-ortega" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="resource-requirement" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

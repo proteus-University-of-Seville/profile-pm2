@@ -18,7 +18,11 @@ def _basic_labels(lang):
 
 _BASIC = {lang: _basic_labels(lang) for lang in LANGS}
 
+# Archetypes of basic whose main class is not their id
+MAIN_CLASS = {"local-figure": "figure", "remote-figure": "figure"}
+
 def class_label(cls, lang):
+    cls = MAIN_CLASS.get(cls, cls)
     label = CLASSES[cls][lang] if cls in CLASSES else _BASIC[lang][cls]
     return label.replace("\\n", " ").replace("\n", " ")
 
