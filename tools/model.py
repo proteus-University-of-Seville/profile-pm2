@@ -367,7 +367,7 @@ CLASSES = {
     "document-control": t("Document\\ncontrol", "Control del\\ndocumento"),
     "approval": t("Approval", "Aprobación"),
     "revision": t("Revision", "Revisión"),
-    "business-process": t("Business\\nprocess", "Proceso de\\nnegocio"),
+    "business-process": t("Business\\nprocess", "Proceso\\nNegocio"),
     "alternative": t("Alternative", "Alternativa"),
     "benefit": t("Benefit", "Beneficio"),
     "scope-item": t("Scope\\nitem", "Elemento\\nalcance"),

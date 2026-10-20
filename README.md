@@ -18,8 +18,9 @@ custom_profile_path = C:/proteus-profiles/pm2
 Then create a project from one of the project archetypes:
 
 - **PM² project** (`pm2-empty`): a Project Initiation Request, a Business Case and a Project
-  Charter with their sections and guidance, and a document for the organisations, stakeholders and business
-  processes of the project.
+  Charter with their sections and guidance, and a document for the organisations and
+  stakeholders of the project. The business processes are defined in the Business Case
+  (section 2.2.1), as in the PM² template.
 - **Electronic management of final projects** (`pm2-sample`): a complete sample PIR, BC and PC
   for a school of the University of Seville (people and figures are fictitious).
 

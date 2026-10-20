@@ -6,6 +6,9 @@
   </properties>
   <children>
     <child id="bc-impact-processes-help"/>
+    <child id="bp-1"/>
+    <child id="bp-2"/>
+    <child id="bp-3"/>
     <child id="imp-4"/>
     <child id="imp-5"/>
   </children>

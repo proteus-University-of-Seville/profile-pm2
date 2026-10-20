@@ -21,12 +21,16 @@ BC_SECTIONS = [
            "las consideraciones sobre la **urgencia** de abordarlas."), []),
         ("current-impact", t("Current situation impact", "Impacto de la situación actual"), None, [
             ("impact-processes", t("Current impact on processes and the organisation", "Impacto actual en los procesos y la organización"),
-             t("Describe the **impact** of the current situation on the strategy, the **business processes** "
-               "(trace the affected processes and rate the impact on their owners and users), the people "
-               "and the IT landscape of the organisation.",
-               "Describa el **impacto** de la situación actual en la estrategia, los **procesos de negocio** "
-               "(trace los procesos afectados y valore el impacto en sus responsables y usuarios), las personas "
-               "y el panorama TI de la organización."), []),
+             t("Define here the **business processes** affected by the current situation (category, domain, "
+               "sub-domain, macro process), and describe the **impact** of the current situation on the "
+               "strategy, the processes (trace the affected processes and rate the impact on their owners and "
+               "users), the people and the IT landscape of the organisation. The Business Implementation Plan "
+               "will reuse these processes.",
+               "Defina aquí los **procesos de negocio** afectados por la situación actual (categoría, dominio, "
+               "subdominio, macroproceso) y describa el **impacto** de la situación actual en la estrategia, los "
+               "procesos (trace los procesos afectados y valore el impacto en sus responsables y usuarios), las "
+               "personas y el panorama TI de la organización. El plan de implantación en el negocio reutilizará "
+               "estos procesos."), []),
             ("impact-stakeholders", t("Impact on stakeholders and users", "Impacto en las partes interesadas y los usuarios"),
              t("Describe the **impact** of the current situation on the stakeholders and users. If the project "
                "includes an information system, describe the current working environment of the users from a "
@@ -132,18 +136,12 @@ BC_DESCRIPTION = t("Justification of the project: alternatives, chosen solution,
                    "Justificación del proyecto: alternativas, solución elegida, beneficios y costes "
                    "(artefacto PM² de la fase de inicio).")
 
-PROCESSES_SECTION = ("processes", t("Business processes", "Procesos de negocio"),
-                     t("Business processes affected by the current situation or by the solution, with "
-                       "their category, domain and owner.",
-                       "Procesos de negocio afectados por la situación actual o por la solución, con su "
-                       "categoría, dominio y responsable."), ["business-process"])
-
 
 # Objects to use in each section (shown in its guidance comment)
 OBJECTS = {
     "request": ["symbolic-link"],
     "situation": ["symbolic-link", "business-situation"],
-    "impact-processes": ["impact", "business-process"],
+    "impact-processes": ["business-process", "impact"],
     "impact-stakeholders": ["symbolic-link", "impact"],
     "interrelations": ["interdependency"],
     "outcomes": ["symbolic-link", "outcome"],
@@ -162,7 +160,6 @@ OBJECTS = {
     "synergies": ["interdependency"],
     "po": ["symbolic-link"], "sp": ["symbolic-link"], "authority": ["symbolic-link"],
     "references": ["bibliography-item"],
-    "processes": ["business-process"],
 }
 
 # Guidance of the sections that only group subsections
@@ -231,7 +228,7 @@ def sample(p, lang, document_values, ids):
         v.update({k.replace("_", "-"): x for k, x in values.items()})
         return p.add(arch, id_, v)
 
-    # --- business processes (in the stakeholders document) ---------------------------
+    # --- business processes (defined in 2.2.1, as in the PM² template) ----------------
     bp1 = item("business-process", "bp-1", "001", t("Final project management", "Gestión de trabajos fin de estudios"),
                t("Proposal, assignment, supervision, filing and defence of the final degree and master projects, "
                  "with students, supervisors, committees and the secretariat.",
@@ -479,7 +476,7 @@ def sample(p, lang, document_values, ids):
     items = {
         "request": L("pir-request"),
         "situation": L("sit-1", "sit-2", "sit-3"),
-        "impact-processes": [imp4, imp5],
+        "impact-processes": [bp1, bp2, bp3, imp4, imp5],
         "impact-stakeholders": L("imp-3"),
         "interrelations": [dep1],
         "outcomes": L("out-1", "out-2", "out-3"),
@@ -505,4 +502,3 @@ def sample(p, lang, document_values, ids):
         "document-location": t("the document management system of the school", "el gestor documental de la escuela"),
         "prepared-for": [ids["us"]], "prepared-by": [ids["sic"]]}),
         [control] + secs + [references(p, [ref1, ref2], True)])
-    return [bp1, bp2, bp3]

@@ -25,6 +25,5 @@
   <children>
     <child id="stk-organisations"/>
     <child id="stk-stakeholders"/>
-    <child id="stk-processes"/>
   </children>
 </object>

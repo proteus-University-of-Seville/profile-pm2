@@ -102,8 +102,8 @@ def sections(p, prefix, specs, items=None, guidance=True):
 def build_empty(lang, Project, document_values):
     p = Project(lang, "pm2-empty", "pm2-empty",
                 t("PM² project", "Proyecto PM²"),
-                t("Empty PM² project with a Project Initiation Request, a Business Case, a Project Charter and the organisations, stakeholders and business processes of the project.",
-                  "Proyecto PM² vacío con una solicitud de inicio, un caso de negocio, un acta de constitución y las organizaciones, partes interesadas y procesos de negocio del proyecto."))
+                t("Empty PM² project with a Project Initiation Request, a Business Case, a Project Charter and the organisations and stakeholders of the project.",
+                  "Proyecto PM² vacío con una solicitud de inicio, un caso de negocio, un acta de constitución y las organizaciones y partes interesadas del proyecto."))
     approval = p.add("approval", "pir-approval-1")
     revision = p.add("revision", "pir-revision-1")
     control = p.add("document-control", "pir-control", {}, [approval, revision])
@@ -113,7 +113,7 @@ def build_empty(lang, Project, document_values):
                [control, request] + secs)
     business_case.empty(p, lang, document_values)
     project_charter.empty(p, lang, document_values)
-    stk = sections(p, "stk", STK_SECTIONS + [business_case.PROCESSES_SECTION])
+    stk = sections(p, "stk", STK_SECTIONS)
     p.document("stakeholders", document_values(lang, {"_args": (STK_ACRONYM, STK_NAME, STK_DESCRIPTION)}), stk)
     p.save()
 
@@ -345,7 +345,7 @@ def build_sample(lang, Project, document_values):
         "document-author": [initiator], "project-manager": [pm],
         "document-location": t("the document management system of the school", "el gestor documental de la escuela"),
         "prepared-for": [us], "prepared-by": [school]}), [control, request] + secs)
-    processes = business_case.sample(p, lang, document_values, {
+    business_case.sample(p, lang, document_values, {
         "us": us, "school": school, "sic": sic, "board": board, "po": po, "sp": sp, "pm": pm,
         "secretary": secretary, "sit-1": sit1, "sit-2": sit2, "sit-3": sit3, "out-1": out1,
         "out-2": out2, "out-3": out3, "sc-2": sc2, "asm-2": asm2})
@@ -357,10 +357,9 @@ def build_sample(lang, Project, document_values):
     ids.update({"cost-plan": "bc-cost-plan", "us": us, "school": school, "sic": sic, "po": po, "sp": sp,
                 "pm": pm, "secretary": secretary, "initiator": initiator, "students": students})
     project_charter.sample(p, lang, document_values, ids)
-    stk = sections(p, "stk", STK_SECTIONS + [business_case.PROCESSES_SECTION],
+    stk = sections(p, "stk", STK_SECTIONS,
                    {"organisations": [us, school, board, sic, students],
-                    "stakeholders": [po, initiator, secretary, sp, pm],
-                    "processes": processes})
+                    "stakeholders": [po, initiator, secretary, sp, pm]})
     p.document("stakeholders", document_values(lang, {
         "_args": (STK_ACRONYM, STK_NAME, STK_DESCRIPTION), "version": "1.0",
         "document-author": [initiator], "project-manager": [pm],
