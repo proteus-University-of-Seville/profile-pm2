@@ -310,7 +310,7 @@ CLASSES = {
     "business-process": t("Business\\nprocess", "Proceso de\\nnegocio"),
     "alternative": t("Alternative", "Alternativa"),
     "benefit": t("Benefit", "Beneficio"),
-    "scope-item": t("Scope\\nitem", "Elemento\\nde alcance"),
+    "scope-item": t("Scope\\nitem", "Elemento\\nalcance"),
     "deliverable": t("Deliverable", "Entregable"),
     "milestone": t("Milestone", "Hito"),
     "interdependency": t("Interdependency", "Interdependencia"),
