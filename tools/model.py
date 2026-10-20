@@ -282,7 +282,7 @@ TOOLTIPS = {
     "document-location": t("Where the latest version of this controlled document is stored.",
                            "Dónde se guarda la última versión de este documento controlado."),
     "refines": t("Object of a previous artefact that this one refines (e.g. a success criterion of the Project Initiation Request refined in the Business Case).",
-                 "Objeto de un artefacto anterior que este refina (p. ej., un criterio de éxito de la solicitud de inicio refinado en el Business Case)."),
+                 "Objeto de un artefacto anterior que este refina (p. ej., un criterio de éxito de la solicitud de inicio refinado en el caso de negocio)."),
     "critical": t("Without it, the project cannot be considered a success.",
                   "Sin él, el proyecto no puede considerarse un éxito."),
     "chosen": t("The alternative recommended and described in the solution.",

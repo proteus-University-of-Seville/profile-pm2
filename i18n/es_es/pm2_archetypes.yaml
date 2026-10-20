@@ -237,7 +237,7 @@ archetype.tooltip.estimated-effort: "Estimación de alto nivel en días-persona.
 archetype.tooltip.approving-authority: "Responsable de la decisión según la estructura de gobierno de la organización."
 archetype.tooltip.validation: "Los supuestos se toman como hechos pero deben validarse; si no se validan, pueden convertirse en riesgos."
 archetype.tooltip.document-location: "Dónde se guarda la última versión de este documento controlado."
-archetype.tooltip.refines: "Objeto de un artefacto anterior que este refina (p. ej., un criterio de éxito de la solicitud de inicio refinado en el Business Case)."
+archetype.tooltip.refines: "Objeto de un artefacto anterior que este refina (p. ej., un criterio de éxito de la solicitud de inicio refinado en el caso de negocio)."
 archetype.tooltip.critical: "Sin él, el proyecto no puede considerarse un éxito."
 archetype.tooltip.chosen: "La alternativa recomendada, que se describe en la solución."
 archetype.tooltip.first-year: "Año de la primera columna de las tablas de costes; los costes se dan para 5 años."

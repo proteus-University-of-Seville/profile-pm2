@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <object id="pir" classes=":Proteus-document" acceptedChildren=":Proteus-any">
   <properties>
-    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[PIR]]></stringProperty>
+    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[SIP]]></stringProperty>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Solicitud de inicio del proyecto]]></stringProperty>
     <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
     <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>

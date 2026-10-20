@@ -73,9 +73,11 @@ STK_SECTIONS = [
        "interesadas."), ["stakeholder"]),
 ]
 
+PIR_ACRONYM = t("PIR", "SIP")
 PIR_NAME = t("Project Initiation Request", "Solicitud de inicio del proyecto")
 PIR_DESCRIPTION = t("Initial request to start a project (PM² artefact of the initiating phase).",
                     "Solicitud inicial para poner en marcha un proyecto (artefacto PM² de la fase de inicio).")
+STK_ACRONYM = t("STK", "OPI")
 STK_NAME = t("Organisations and stakeholders", "Organizaciones y partes interesadas")
 STK_DESCRIPTION = t("Organisations and people involved in the project.",
                     "Organizaciones y personas que intervienen en el proyecto.")
@@ -100,17 +102,17 @@ def build_empty(lang, Project, document_values):
     p = Project(lang, "pm2-empty", "pm2-empty",
                 t("PM² project", "Proyecto PM²"),
                 t("Empty PM² project with a Project Initiation Request, a Business Case and the organisations, stakeholders and business processes of the project.",
-                  "Proyecto PM² vacío con una solicitud de inicio, un Business Case y las organizaciones, partes interesadas y procesos de negocio del proyecto."))
+                  "Proyecto PM² vacío con una solicitud de inicio, un caso de negocio y las organizaciones, partes interesadas y procesos de negocio del proyecto."))
     approval = p.add("approval", "pir-approval-1")
     revision = p.add("revision", "pir-revision-1")
     control = p.add("document-control", "pir-control", {}, [approval, revision])
     request = p.add("initiation-request", "pir-request")
     secs = sections(p, "pir", PIR_SECTIONS)
-    p.document("pir", document_values(lang, {"_args": ("PIR", PIR_NAME, PIR_DESCRIPTION)}),
+    p.document("pir", document_values(lang, {"_args": (PIR_ACRONYM, PIR_NAME, PIR_DESCRIPTION)}),
                [control, request] + secs)
     business_case.empty(p, lang, document_values)
     stk = sections(p, "stk", STK_SECTIONS + [business_case.PROCESSES_SECTION])
-    p.document("stakeholders", document_values(lang, {"_args": ("STK", STK_NAME, STK_DESCRIPTION)}), stk)
+    p.document("stakeholders", document_values(lang, {"_args": (STK_ACRONYM, STK_NAME, STK_DESCRIPTION)}), stk)
     p.save()
 
 # ---------------------------------------------------------------------------
@@ -122,7 +124,7 @@ def build_sample(lang, Project, document_values):
                 t("Electronic management of final projects", "Gestión electrónica de TFG y TFM"),
                 t("Sample PM² project: Project Initiation Request and Business Case for the electronic management of the final "
                   "degree and master projects of a school of the University of Seville. People and figures are fictitious.",
-                  "Proyecto PM² de ejemplo: solicitud de inicio y Business Case para la gestión electrónica de los trabajos fin "
+                  "Proyecto PM² de ejemplo: solicitud de inicio y caso de negocio para la gestión electrónica de los trabajos fin "
                   "de grado y fin de máster de una escuela de la Universidad de Sevilla. Las personas y las cifras son ficticias."))
 
     # --- organisations and stakeholders --------------------------------------------------
@@ -318,7 +320,7 @@ def build_sample(lang, Project, document_values):
              "risks": [rsk1, rsk2, rsk3]}
     secs = sections(p, "pir", PIR_SECTIONS, items)
     p.document("pir", document_values(lang, {
-        "_args": ("PIR", PIR_NAME, PIR_DESCRIPTION), "version": "1.0", "sensitivity": "sensitive-basic",
+        "_args": (PIR_ACRONYM, PIR_NAME, PIR_DESCRIPTION), "version": "1.0", "sensitivity": "sensitive-basic",
         "document-author": [initiator], "project-manager": [pm],
         "document-location": t("the document management system of the school", "el gestor documental de la escuela"),
         "prepared-for": [us], "prepared-by": [school]}), [control, request] + secs)
@@ -331,7 +333,7 @@ def build_sample(lang, Project, document_values):
                     "stakeholders": [po, initiator, secretary, sp, pm],
                     "processes": processes})
     p.document("stakeholders", document_values(lang, {
-        "_args": ("STK", STK_NAME, STK_DESCRIPTION), "version": "1.0",
+        "_args": (STK_ACRONYM, STK_NAME, STK_DESCRIPTION), "version": "1.0",
         "document-author": [initiator], "project-manager": [pm],
         "prepared-for": [us], "prepared-by": [school]}), stk)
     p.save([BASIC_ASSETS / "00_document/assets/us-logo.jpg",

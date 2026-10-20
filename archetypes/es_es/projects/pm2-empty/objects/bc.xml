@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <object id="bc" classes=":Proteus-document" acceptedChildren=":Proteus-any">
   <properties>
-    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[BC]]></stringProperty>
-    <stringProperty name=":Proteus-name" category="general"><![CDATA[Business Case]]></stringProperty>
+    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[CN]]></stringProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Caso de negocio]]></stringProperty>
     <stringProperty name="version" category="general"><![CDATA[0.1]]></stringProperty>
     <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
     <enumProperty name="sensitivity" category="general" choices="public sensitive-basic sensitive-high">public</enumProperty>

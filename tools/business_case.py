@@ -125,7 +125,8 @@ REFERENCES = ("references", t("References and related documents", "Referencias y
               t("Reference the relevant documents with their title, version, date and source or location.",
                 "Referencie los documentos relevantes con su título, versión, fecha y fuente o ubicación."))
 
-BC_NAME = t("Business Case", "Business Case")
+BC_ACRONYM = t("BC", "CN")
+BC_NAME = t("Business Case", "Caso de negocio")
 BC_DESCRIPTION = t("Justification of the project: alternatives, chosen solution, benefits and costs "
                    "(PM² artefact of the initiating phase).",
                    "Justificación del proyecto: alternativas, solución elegida, beneficios y costes "
@@ -215,7 +216,7 @@ def empty(p, lang, document_values):
     control = p.add("document-control", "bc-control", {}, [approval, revision])
     costs = p.add("cost-plan", "bc-cost-plan")
     secs = tree(p, "bc", BC_SECTIONS, {"request": [link(p, "pir-request")], "costs": [costs]}, True)
-    p.document("bc", document_values(lang, {"_args": ("BC", BC_NAME, BC_DESCRIPTION)}),
+    p.document("bc", document_values(lang, {"_args": (BC_ACRONYM, BC_NAME, BC_DESCRIPTION)}),
                [control] + secs + [references(p, [], True)])
 
 
@@ -462,7 +463,7 @@ def sample(p, lang, document_values, ids):
                                               "approver": [ids["sp"]], "action": "review"})
     r1 = p.add("revision", "bc-revision-1", {":Proteus-name": t("First version", "Primera versión"),
                                               "revision": "1.0", "created-by": [ids["pm"]],
-                                              "changes": t("First version of the Business Case.", "Primera versión del Business Case.")})
+                                              "changes": t("First version of the Business Case.", "Primera versión del caso de negocio.")})
     control = p.add("document-control", "bc-control", {}, [a1, a2, r1])
     L = lambda *xs: [link(p, x) for x in xs]
     items = {
@@ -489,7 +490,7 @@ def sample(p, lang, document_values, ids):
     }
     secs = tree(p, "bc", BC_SECTIONS, items, True)
     p.document("bc", document_values(lang, {
-        "_args": ("BC", BC_NAME, BC_DESCRIPTION), "version": "1.0", "sensitivity": "sensitive-basic",
+        "_args": (BC_ACRONYM, BC_NAME, BC_DESCRIPTION), "version": "1.0", "sensitivity": "sensitive-basic",
         "document-author": [ids["pm"]], "project-manager": [ids["pm"]],
         "document-location": t("the document management system of the school", "el gestor documental de la escuela"),
         "prepared-for": [ids["us"]], "prepared-by": [ids["sic"]]}),

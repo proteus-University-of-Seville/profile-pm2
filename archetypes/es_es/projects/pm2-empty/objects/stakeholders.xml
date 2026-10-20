@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <object id="stakeholders" classes=":Proteus-document" acceptedChildren=":Proteus-any">
   <properties>
-    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[STK]]></stringProperty>
+    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[OPI]]></stringProperty>
     <stringProperty name=":Proteus-name" category="general"><![CDATA[Organizaciones y partes interesadas]]></stringProperty>
     <stringProperty name="version" category="general"><![CDATA[0.1]]></stringProperty>
     <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
