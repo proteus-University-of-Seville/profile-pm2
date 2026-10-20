@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="stk-processes-help"/>
     <child id="bp-1"/>
     <child id="bp-2"/>
     <child id="bp-3"/>

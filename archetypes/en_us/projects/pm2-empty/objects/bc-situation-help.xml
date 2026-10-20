@@ -6,7 +6,9 @@
     <stringProperty name="version">1.0</stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[Detail the **business situations** described in the Project Initiation Request (link them) and add the considerations on the **urgency** of addressing them.]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[Detail the **business situations** described in the Project Initiation Request (link them) and add the considerations on the **urgency** of addressing them.
+
+*Objects to use:* **Symbolic link** (*Document* tab), **Business situation** (*Rationale* tab).]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="bc-assumptions-help"/>
     <child id="bc-link-asm-1"/>
     <child id="bc-link-asm-2"/>
     <child id="bc-link-asm-3"/>

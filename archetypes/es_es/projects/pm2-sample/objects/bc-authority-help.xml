@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="bc-authority-help" classes="traceable-object paragraph comment" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Orientaciones]]></stringProperty>
+    <dateProperty name=":Proteus-date">2024-09-01</dateProperty>
+    <stringProperty name="version">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="text" category="detail"><![CDATA[Responsable de la decisión según la estructura de gobierno de la organización (enlácelo). Su aprobación se registra en el control del documento.
+
+*Objetos que se usan:* **Enlace simbólico** (pestaña *Documento*).]]></markdownProperty>
+    <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

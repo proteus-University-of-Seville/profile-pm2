@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="bc-request-help"/>
     <child id="bc-link-pir-request"/>
   </children>
 </object>

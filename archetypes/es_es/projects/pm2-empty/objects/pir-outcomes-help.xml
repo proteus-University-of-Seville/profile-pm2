@@ -6,7 +6,9 @@
     <stringProperty name="version">1.0</stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[Describa a alto nivel los principales **resultados** que se esperan del proyecto: la situación futura o deseada que producirá el cambio. Más adelante se les asociarán beneficios medibles.]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[Describa a alto nivel los principales **resultados** que se esperan del proyecto: la situación futura o deseada que producirá el cambio. Más adelante se les asociarán beneficios medibles.
+
+*Objetos que se usan:* **Resultado** (pestaña *Justificación*).]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

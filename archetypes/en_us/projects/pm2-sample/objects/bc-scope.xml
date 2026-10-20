@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="bc-scope-help"/>
     <child id="scp-1"/>
     <child id="scp-2"/>
     <child id="scp-3"/>

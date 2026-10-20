@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="bc-roadmap-help"/>
     <child id="ms-1"/>
     <child id="ms-2"/>
     <child id="ms-3"/>

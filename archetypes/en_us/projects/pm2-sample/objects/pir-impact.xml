@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="pir-impact-help"/>
     <child id="imp-1"/>
     <child id="imp-2"/>
     <child id="imp-3"/>

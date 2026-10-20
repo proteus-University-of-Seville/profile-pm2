@@ -2,6 +2,7 @@
 from pathlib import Path
 from model import t, DATE
 import business_case
+from guidance import guidance as guidance_text, GUIDANCE_NAME
 
 # Assets of the basic archetypes, copied into this profile
 BASIC_ASSETS = Path(__file__).resolve().parent.parent / "archetypes" / "es_es" / "objects"
@@ -17,45 +18,45 @@ PIR_SECTIONS = [
        "situation** for each need, problem or opportunity.",
        "Describa por qué debe iniciarse el proyecto: la necesidad de negocio a la que responde, el "
        "problema que resuelve o la oportunidad que aprovecha (o una combinación). Añada una **situación de "
-       "negocio** por cada necesidad, problema u oportunidad.")),
+       "negocio** por cada necesidad, problema u oportunidad."), ["business-situation"]),
     ("legal", t("Legal basis", "Base legal"),
      t("State the legal basis of the request, if any (acts, directives of the senior management, internal "
        "regulations), and the **strategic goals** of the organisation the project is aligned with.",
        "Indique la base legal de la solicitud, si la hay (normas, directrices de la dirección, normativa "
-       "interna), y los **objetivos estratégicos** de la organización con los que se alinea el proyecto.")),
+       "interna), y los **objetivos estratégicos** de la organización con los que se alinea el proyecto."), ["legal-basis", "strategic-goal"]),
     ("outcomes", t("Outcomes", "Resultados esperados"),
      t("Describe at a high level the main **outcomes** expected from the project: the future or desired "
        "state that the change brought by the project will produce. Measurable benefits should be linked "
        "to them later.",
        "Describa a alto nivel los principales **resultados** que se esperan del proyecto: la situación "
-       "futura o deseada que producirá el cambio. Más adelante se les asociarán beneficios medibles.")),
+       "futura o deseada que producirá el cambio. Más adelante se les asociarán beneficios medibles."), ["outcome"]),
     ("impact", t("Impact", "Impacto"),
      t("Describe the **impact** of the current situation and of the desired solution inside the "
        "organisation (processes, people, culture) and on its external stakeholders. Keep it at a high level.",
        "Describa el **impacto** de la situación actual y de la solución deseada dentro de la organización "
-       "(procesos, personas, cultura) y sobre sus partes interesadas externas. Manténgalo a alto nivel.")),
+       "(procesos, personas, cultura) y sobre sus partes interesadas externas. Manténgalo a alto nivel."), ["impact"]),
     ("success", t("Success criteria", "Criterios de éxito"),
      t("Describe the high level **criteria** to evaluate the project as a success or a failure, e.g. on "
        "scope, schedule and cost.",
        "Describa los **criterios** de alto nivel para evaluar si el proyecto es un éxito o un fracaso, por "
-       "ejemplo de alcance, plazo y coste.")),
+       "ejemplo de alcance, plazo y coste."), ["success-criterion"]),
     ("assumptions", t("Assumptions", "Supuestos")
      , t("List the **assumptions** about business, technology, resources, organisational environment, "
          "scope, expectations or schedule. They are taken as facts at this stage, but they must be "
          "validated: an assumption that is not validated may become a risk.",
          "Enumere los **supuestos** sobre negocio, tecnología, recursos, entorno organizativo, alcance, "
          "expectativas o plazos. En esta fase se toman como hechos, pero deben validarse: un supuesto no "
-         "validado puede convertirse en un riesgo.")),
+         "validado puede convertirse en un riesgo."), ["assumption"]),
     ("constraints", t("Constraints", "Restricciones"),
      t("List the key **constraints** on schedule, budget, resources or products to be used, and also "
        "decisions, compliance and constraints coming from the organisation and its environment.",
        "Enumere las **restricciones** clave de plazo, presupuesto, recursos o productos que se deben usar, "
-       "así como decisiones, cumplimiento normativo y restricciones de la organización y su entorno.")),
+       "así como decisiones, cumplimiento normativo y restricciones de la organización y su entorno."), ["constraint"]),
     ("risks", t("Risks", "Riesgos"),
      t("List the initial **risks** identified, focusing on business risks. At this stage only the "
        "description and the category are needed; the assessment and the response are completed later.",
        "Enumere los **riesgos** iniciales identificados, centrándose en los de negocio. En esta fase basta "
-       "con la descripción y la categoría; la evaluación y la respuesta se completan más adelante.")),
+       "con la descripción y la categoría; la evaluación y la respuesta se completan más adelante."), ["risk"]),
 ]
 
 STK_SECTIONS = [
@@ -63,13 +64,13 @@ STK_SECTIONS = [
      t("Organisations and units involved in the project: the requesting organisation and units, the "
        "solution provider, the governance bodies...",
        "Organizaciones y unidades que intervienen en el proyecto: la organización y unidades "
-       "solicitantes, el proveedor de la solución, los órganos de gobierno...")),
+       "solicitantes, el proveedor de la solución, los órganos de gobierno..."), ["organization"]),
     ("stakeholders", t("Stakeholders", "Partes interesadas"),
      t("People involved in the project. The roles of the project (initiator, project owner, solution "
        "provider, project manager...) are traces from the documents to these stakeholders.",
        "Personas que intervienen en el proyecto. Los roles del proyecto (iniciador, propietario, "
        "proveedor de la solución, jefe de proyecto...) son trazas desde los documentos a estas partes "
-       "interesadas.")),
+       "interesadas."), ["stakeholder"]),
 ]
 
 PIR_NAME = t("Project Initiation Request", "Solicitud de inicio del proyecto")
@@ -82,11 +83,11 @@ STK_DESCRIPTION = t("Organisations and people involved in the project.",
 
 def sections(p, prefix, specs, items=None, guidance=True):
     ids = []
-    for key, title, help_ in specs:
+    for key, title, help_, objects in specs:
         kids = []
         if guidance:
-            kids.append(p.add("comment", f"{prefix}-{key}-help", {":Proteus-name": t("Guidance", "Orientaciones"),
-                                                                 "text": help_}))
+            kids.append(p.add("comment", f"{prefix}-{key}-help", {":Proteus-name": GUIDANCE_NAME,
+                                                                 "text": guidance_text(help_, objects)}))
         kids += (items or {}).get(key, [])
         ids.append(p.add("section", f"{prefix}-{key}", {":Proteus-name": title}, kids))
     return ids
@@ -315,7 +316,7 @@ def build_sample(lang, Project, document_values):
              "impact": [imp1, imp2, imp3], "success": [sc1, sc2, sc3, sc4],
              "assumptions": [asm1, asm2, asm3], "constraints": [con1, con2, con3],
              "risks": [rsk1, rsk2, rsk3]}
-    secs = sections(p, "pir", PIR_SECTIONS, items, guidance=False)
+    secs = sections(p, "pir", PIR_SECTIONS, items)
     p.document("pir", document_values(lang, {
         "_args": ("PIR", PIR_NAME, PIR_DESCRIPTION), "version": "1.0", "sensitivity": "sensitive-basic",
         "document-author": [initiator], "project-manager": [pm],
@@ -328,7 +329,7 @@ def build_sample(lang, Project, document_values):
     stk = sections(p, "stk", STK_SECTIONS + [business_case.PROCESSES_SECTION],
                    {"organisations": [us, school, board, sic],
                     "stakeholders": [po, initiator, secretary, sp, pm],
-                    "processes": processes}, guidance=False)
+                    "processes": processes})
     p.document("stakeholders", document_values(lang, {
         "_args": ("STK", STK_NAME, STK_DESCRIPTION), "version": "1.0",
         "document-author": [initiator], "project-manager": [pm],

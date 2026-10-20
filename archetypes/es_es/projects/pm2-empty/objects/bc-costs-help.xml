@@ -6,7 +6,9 @@
     <stringProperty name="version">1.0</stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[Coste total de propiedad durante al menos 5 años: añada un **coste** al plan de costes por cada concepto, con los de personal en ETC y el resto en k€, e indique la fuente de financiación.]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[Coste total de propiedad durante al menos 5 años: añada un **coste** al plan de costes por cada concepto, con los de personal en ETC y el resto en k€, e indique la fuente de financiación.
+
+*Objetos que se usan:* **Plan de costes** (pestaña *Solución*), **Coste** (menú contextual del plan de costes).]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

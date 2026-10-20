@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="bc-current-impact-help"/>
     <child id="bc-impact-processes"/>
     <child id="bc-impact-stakeholders"/>
   </children>

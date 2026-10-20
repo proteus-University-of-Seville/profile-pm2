@@ -1,5 +1,6 @@
 # Business Case document of the project archetypes of the PM2 profile.
 from model import t, DATE
+from guidance import guidance as guidance_text, GUIDANCE_NAME
 
 # ---------------------------------------------------------------------------
 # Structure of the Business Case: (key, title, guidance, subsections).
@@ -134,7 +135,48 @@ PROCESSES_SECTION = ("processes", t("Business processes", "Procesos de negocio")
                      t("Business processes affected by the current situation or by the solution, with "
                        "their category, domain and owner.",
                        "Procesos de negocio afectados por la situación actual o por la solución, con su "
-                       "categoría, dominio y responsable."))
+                       "categoría, dominio y responsable."), ["business-process"])
+
+
+# Objects to use in each section (shown in its guidance comment)
+OBJECTS = {
+    "request": ["symbolic-link"],
+    "situation": ["symbolic-link", "business-situation"],
+    "impact-processes": ["impact", "business-process"],
+    "impact-stakeholders": ["symbolic-link", "impact"],
+    "interrelations": ["interdependency"],
+    "outcomes": ["symbolic-link", "outcome"],
+    "alternatives": ["alternative"],
+    "legal": ["symbolic-link", "legal-basis", "strategic-goal"],
+    "benefits": ["benefit"],
+    "success": ["symbolic-link", "success-criterion"],
+    "scope": ["scope-item"],
+    "solution-impact": ["symbolic-link", "impact"],
+    "deliverables": ["deliverable"],
+    "assumptions": ["symbolic-link", "assumption"],
+    "constraints": ["symbolic-link", "constraint"],
+    "risks": ["symbolic-link", "risk"],
+    "costs": ["cost-plan", "cost-item"],
+    "roadmap": ["milestone"],
+    "synergies": ["interdependency"],
+    "po": ["symbolic-link"], "sp": ["symbolic-link"], "authority": ["symbolic-link"],
+    "references": ["bibliography-item"],
+    "processes": ["business-process"],
+}
+
+# Guidance of the sections that only group subsections
+CONTAINER_HELP = {
+    "context": t("Current situation that the project addresses: its description and urgency, its impact "
+                 "and its relations with other situations. Each subsection says what it contains.",
+                 "Situación actual que aborda el proyecto: su descripción y urgencia, su impacto y sus "
+                 "relaciones con otras situaciones. Cada subsección indica lo que contiene."),
+    "current-impact": t("Impact of the current situation, on the organisation and on the stakeholders.",
+                        "Impacto de la situación actual, en la organización y en las partes interesadas."),
+    "governance": t("Main roles of the governance of the project, as defined in the PM² roles and "
+                    "responsibilities. Each subsection links to the person or body that plays the role.",
+                    "Principales roles del gobierno del proyecto, según los roles y responsabilidades de "
+                    "PM². Cada subsección enlaza a la persona u órgano que desempeña el rol."),
+}
 
 
 def tree(p, prefix, specs, items, guidance):
@@ -142,9 +184,10 @@ def tree(p, prefix, specs, items, guidance):
     ids = []
     for key, title, help_, subs in specs:
         kids = []
-        if guidance and help_:
+        if guidance:
             kids.append(p.add("comment", f"{prefix}-{key}-help",
-                              {":Proteus-name": t("Guidance", "Orientaciones"), "text": help_}))
+                              {":Proteus-name": GUIDANCE_NAME,
+                               "text": guidance_text(help_ or CONTAINER_HELP[key], OBJECTS.get(key))}))
         kids += items.get(key, [])
         kids += tree(p, prefix, subs, items, guidance)
         ids.append(p.add("section", f"{prefix}-{key}", {":Proteus-name": title}, kids))
@@ -161,7 +204,7 @@ def references(p, items, guidance):
     kids = []
     if guidance:
         kids.append(p.add("comment", f"bc-{key}-help",
-                          {":Proteus-name": t("Guidance", "Orientaciones"), "text": help_}))
+                          {":Proteus-name": GUIDANCE_NAME, "text": guidance_text(help_, OBJECTS[key])}))
     return p.add("appendix", f"bc-{key}", {":Proteus-name": title}, kids + items)
 
 
@@ -444,11 +487,11 @@ def sample(p, lang, document_values, ids):
         "synergies": [dep2, dep3],
         "po": L(ids["po"]), "sp": L(ids["sp"]), "authority": L(ids["board"]),
     }
-    secs = tree(p, "bc", BC_SECTIONS, items, False)
+    secs = tree(p, "bc", BC_SECTIONS, items, True)
     p.document("bc", document_values(lang, {
         "_args": ("BC", BC_NAME, BC_DESCRIPTION), "version": "1.0", "sensitivity": "sensitive-basic",
         "document-author": [ids["pm"]], "project-manager": [ids["pm"]],
         "document-location": t("the document management system of the school", "el gestor documental de la escuela"),
         "prepared-for": [ids["us"]], "prepared-by": [ids["sic"]]}),
-        [control] + secs + [references(p, [ref1, ref2], False)])
+        [control] + secs + [references(p, [ref1, ref2], True)])
     return [bp1, bp2, bp3]

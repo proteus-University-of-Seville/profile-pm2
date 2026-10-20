@@ -6,7 +6,9 @@
     <stringProperty name="version">1.0</stringProperty>
     <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
-    <markdownProperty name="text" category="detail"><![CDATA[Describa las **interrelaciones e interdependencias** de la situación actual con otros problemas, oportunidades o necesidades, dentro y fuera de la organización.]]></markdownProperty>
+    <markdownProperty name="text" category="detail"><![CDATA[Describa las **interrelaciones e interdependencias** de la situación actual con otros problemas, oportunidades o necesidades, dentro y fuera de la organización.
+
+*Objetos que se usan:* **Interdependencia** (pestaña *Condiciones*).]]></markdownProperty>
     <traceProperty name="dependencies" category="dependencies" acceptedTargets="traceable-object" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>

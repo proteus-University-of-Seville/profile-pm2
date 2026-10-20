@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="bc-alternatives-help"/>
     <child id="alt-1"/>
     <child id="alt-2"/>
     <child id="alt-3"/>

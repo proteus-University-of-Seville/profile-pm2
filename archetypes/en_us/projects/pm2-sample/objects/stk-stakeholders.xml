@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="stk-stakeholders-help"/>
     <child id="stk-ruiz"/>
     <child id="stk-herrera"/>
     <child id="stk-castro"/>

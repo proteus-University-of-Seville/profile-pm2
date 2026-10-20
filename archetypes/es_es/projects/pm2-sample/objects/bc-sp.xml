@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="bc-sp-help"/>
     <child id="bc-link-stk-ortega"/>
   </children>
 </object>

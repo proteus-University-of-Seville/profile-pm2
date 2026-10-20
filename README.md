@@ -98,7 +98,10 @@ places the archetypes copied from `basic`), the `pm2_*.yaml` translations and th
 archetypes are generated from a single definition, so that both languages keep the same ids,
 classes and properties. Change `tools/model.py` (archetypes, tabs and labels),
 `tools/content.py` (project archetypes and the PIR) or `tools/business_case.py` (the Business
-Case) and run, with the Python environment of PROTEUS:
+Case) and run, with the Python environment of PROTEUS. Every section of the project
+archetypes gets a guidance comment with what it contains and the objects to use in it (their
+class label and toolbar tab, built by `tools/guidance.py` from the model, so they stay up to
+date):
 
 ```
 python tools/gen.py

@@ -5,6 +5,7 @@
     <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children>
+    <child id="pir-constraints-help"/>
     <child id="con-1"/>
     <child id="con-2"/>
     <child id="con-3"/>
