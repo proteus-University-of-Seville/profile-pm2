@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pir-context" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Context / situation]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="sit-1"/>
+    <child id="sit-2"/>
+    <child id="sit-3"/>
+  </children>
+</object>

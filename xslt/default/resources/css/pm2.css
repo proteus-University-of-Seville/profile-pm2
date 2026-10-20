@@ -1,0 +1,92 @@
+/* ======================================================= */
+/* File    : pm2.css                                       */
+/* Content : CSS of the PM2 archetypes                     */
+/* Author  : Amador Durán Toro & Claude Code               */
+/* Date    : 2026/10/19                                    */
+/* Version : 1.0                                           */
+/* ======================================================= */
+/* Accent of each PM2 archetype (the colour of its icon),  */
+/* the escalation row of risks and the document control    */
+/* tables.                                                 */
+/* ======================================================= */
+
+.proteus_table.initiation-request { --accent: #0284c7; }
+.proteus_table.business-situation { --accent: #ea580c; }
+.proteus_table.strategic-goal     { --accent: #be185d; }
+.proteus_table.legal-basis        { --accent: #57534e; }
+.proteus_table.outcome            { --accent: #65a30d; }
+.proteus_table.impact             { --accent: #d97706; }
+.proteus_table.success-criterion  { --accent: #16a34a; }
+.proteus_table.assumption         { --accent: #0891b2; }
+.proteus_table.constraint         { --accent: #334155; }
+.proteus_table.risk               { --accent: #dc2626; }
+.proteus_table.document-control,
+.proteus_table.approval,
+.proteus_table.revision           { --accent: #1e40af; }
+
+table.proteus_table > tbody > tr.risk_escalation > td {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------- */
+/* Document control                                        */
+/* ------------------------------------------------------- */
+
+div.document_control {
+  margin-bottom: 2em;
+}
+
+h2.document_control_title {
+  color: #1e40af;
+}
+
+table.document_control_table {
+  width: 100%;
+  margin: 0 0 1.5em;
+  border-collapse: collapse;
+  line-height: 1.45;
+  background: #ffffff;
+  color: #1d2433;
+}
+
+table.document_control_table td.date {
+  white-space: nowrap;
+}
+
+table.document_control_table > caption {
+  text-align: left;
+  font-weight: bold;
+  padding: 0 0 0.4em;
+}
+
+table.document_control_table th,
+table.document_control_table td {
+  border: 1px solid #dfe3e8;
+  padding: 5px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+table.document_control_table th {
+  background: #eff6ff;
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+table.document_control_table > tbody > tr > th {
+  width: 30%;
+}
+
+table.document_control_table p {
+  margin: 0;
+}
+
+table.document_control_list > tbody > tr:hover {
+  background: #fafbfc;
+  cursor: pointer;
+}
+
+p.document_location {
+  font-style: italic;
+}

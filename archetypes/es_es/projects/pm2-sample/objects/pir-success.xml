@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pir-success" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Criterios de éxito]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="sc-1"/>
+    <child id="sc-2"/>
+    <child id="sc-3"/>
+    <child id="sc-4"/>
+  </children>
+</object>

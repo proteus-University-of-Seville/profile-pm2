@@ -1,0 +1,40 @@
+# ==========================================================================
+# File: en_us/xslt_labels.yaml
+# Description: XSLT template labels (English)
+# Date: 2026/09/23
+# Version: 2.0
+# Author: Amador Durán Toro
+# ==========================================================================
+#
+# These strings are looked up from the XSLT templates using the
+# proteus-utils:i18n() extension function, e.g.
+#
+#   <xsl:value-of select="proteus-utils:i18n(concat('xslt.property.', @name))"/>
+#
+# Adding labels for a new archetype does not require modifying any XSLT file
+# or any other translation file: just add a new .yaml file to this directory.
+
+# NOTE: archetype labels (archetype.class.*, archetype.prop_name.*,
+# archetype.enum_choices.*, ...) are shared with the application GUI and
+# live in basic_archetypes.yaml, not here: this file is only for keys
+# (xslt.*) used exclusively by the XSLT templates.
+
+# -----------------------------------------------------------------------
+# Literal texts used by the templates (key: xslt.<name>)
+# -----------------------------------------------------------------------
+
+xslt.children: "Contains"
+xslt.empty_paragraph: "Empty paragraph"
+xslt.figure: "Figure"
+xslt.project: "Project"
+xslt.symlink_tooltip: "This is a representation of the original object. Modifying this object will modify the original."
+xslt.tbd_expanded: "To Be Determined"
+xslt.toc: "Table of contents"
+xslt.traceability_matrix_missing_class: "Cannot display traceability matrix. Make sure at least one class is selected for rows and columns."
+xslt.traceability_matrix_missing_item: "Cannot display traceability matrix. Make sure at least one object exists of the class selected in rows and columns."
+xslt.traceability_matrix: "Traceability matrix"
+
+# LaTeX template: language option of the babel package and text shown
+# instead of a remote figure that could not be downloaded
+xslt.latex_babel_language: "english"
+xslt.remote_figure_not_available: "Remote figure not available"

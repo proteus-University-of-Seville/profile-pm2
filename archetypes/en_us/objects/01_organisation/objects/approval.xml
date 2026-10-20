@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="approval" classes="approval" acceptedChildren=":Proteus-none" acceptedParents="document-control">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Approval]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <traceProperty name="approver" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <enumProperty name="action" category="general" choices="approve review optional-review">approve</enumProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="sc-3" classes="traceable-object success-criterion" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>SC-</prefix>
+      <number>003</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Within the estimated effort]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[The project will be considered a success if it does not exceed the estimated effort by more than 10 %.]]></markdownProperty>
+    <enumProperty name="dimension" category="detail" choices="tbd scope schedule cost quality benefits">cost</enumProperty>
+    <stringProperty name="target" category="detail"><![CDATA[≤ 132 PD]]></stringProperty>
+    <traceProperty name="evaluates" category="dependencies" acceptedTargets="outcome" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

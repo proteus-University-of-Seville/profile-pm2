@@ -1,0 +1,14 @@
+# Texts of the PM2 XSLT modules
+
+xslt.document_control_info: "Document control information"
+xslt.document_title: "Document title"
+xslt.project_title: "Project title"
+xslt.approvers_reviewers: "Document approvers and reviewers"
+xslt.document_history: "Document history"
+xslt.name: "Name"
+xslt.role: "Role"
+xslt.date: "Date"
+xslt.document_location: "The latest version of this controlled document is stored in {0}."
+xslt.risk_level: " (risk level {0})"
+xslt.escalate: "To be escalated to the directing or steering layer"
+xslt.yes: "Yes"

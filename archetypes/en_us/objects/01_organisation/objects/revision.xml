@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="revision" classes="revision" acceptedChildren=":Proteus-none" acceptedParents="document-control">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Revision]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="revision" category="general"><![CDATA[0.1]]></stringProperty>
+    <traceProperty name="created-by" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <markdownProperty name="changes" category="general"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

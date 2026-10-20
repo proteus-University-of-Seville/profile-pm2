@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pir-constraints" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Restricciones]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="con-1"/>
+    <child id="con-2"/>
+    <child id="con-3"/>
+  </children>
+</object>

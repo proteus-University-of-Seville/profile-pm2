@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="rsk-1" classes="traceable-object risk" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>RSK-</prefix>
+      <number>001</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Personal no disponible]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="risk-pattern"><![CDATA[Debido a la coincidencia con el periodo de matrícula, podría ocurrir que el personal del SIC no esté disponible, lo que provocaría retrasos en el desarrollo.]]></markdownProperty>
+    <enumProperty name="category" category="detail" choices="tbd business staffing contractor legal technical other">staffing</enumProperty>
+    <enumProperty name="status" category="detail" choices="proposed assessing awaiting-approval approved rejected closed">assessing</enumProperty>
+    <traceProperty name="identified-by" category="detail" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="stk-ortega" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <enumProperty name="likelihood" category="detail" choices="tbd very-low low medium high very-high">medium</enumProperty>
+    <enumProperty name="impact" category="detail" choices="tbd very-low low medium high very-high">high</enumProperty>
+    <traceProperty name="risk-owner" category="detail" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="stk-molina" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <enumProperty name="response-strategy" category="detail" choices="tbd avoid reduce accept transfer-share">tbd</enumProperty>
+    <markdownProperty name="actions" category="detail"><![CDATA[]]></markdownProperty>
+    <booleanProperty name="escalation" category="detail">false</booleanProperty>
+    <traceProperty name="related" category="dependencies" acceptedTargets="assumption constraint" traceType=":Proteus-dependency">
+      <trace target="asm-1" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

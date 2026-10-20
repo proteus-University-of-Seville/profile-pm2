@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+  <object id="success-criterion" />
+  <object id="assumption" />
+  <object id="constraint" />
+  <object id="risk" />
+</objects>

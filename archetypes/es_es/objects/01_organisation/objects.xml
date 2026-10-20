@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+  <object id="organization" />
+  <object id="stakeholder" />
+  <object id="meeting" />
+  <object id="document-control" />
+  <object id="approval" />
+  <object id="revision" />
+</objects>

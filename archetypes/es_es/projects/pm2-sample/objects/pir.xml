@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pir" classes=":Proteus-document" acceptedChildren=":Proteus-any">
+  <properties>
+    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[PIR]]></stringProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Solicitud de inicio del proyecto]]></stringProperty>
+    <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <enumProperty name="sensitivity" category="general" choices="public sensitive-basic sensitive-high">sensitive-basic</enumProperty>
+    <traceProperty name="document-author" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="stk-herrera" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="project-manager" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="stk-molina" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <stringProperty name="document-location" category="general" tooltip="document-location"><![CDATA[el gestor documental de la escuela]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Solicitud inicial para poner en marcha un proyecto (artefacto PM² de la fase de inicio).]]></markdownProperty>
+    <traceProperty name="prepared-for" category="dependencies" acceptedTargets="organization" traceType=":Proteus-dependency">
+      <trace target="org-us" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="prepared-by" category="dependencies" acceptedTargets="organization" traceType=":Proteus-author">
+      <trace target="org-school" traceType=":Proteus-author"/>
+    </traceProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pir-control"/>
+    <child id="pir-request"/>
+    <child id="pir-context"/>
+    <child id="pir-legal"/>
+    <child id="pir-outcomes"/>
+    <child id="pir-impact"/>
+    <child id="pir-success"/>
+    <child id="pir-assumptions"/>
+    <child id="pir-constraints"/>
+    <child id="pir-risks"/>
+  </children>
+</object>

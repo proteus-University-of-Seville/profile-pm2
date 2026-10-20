@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pir-legal" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Base legal]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="lb-1"/>
+    <child id="lb-2"/>
+    <child id="sg-1"/>
+  </children>
+</object>

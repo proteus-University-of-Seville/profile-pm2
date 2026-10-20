@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="pir-control" classes="document-control" acceptedChildren="approval revision" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general">Control del documento</stringProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="pir-approval-1"/>
+    <child id="pir-revision-1"/>
+  </children>
+</object>
