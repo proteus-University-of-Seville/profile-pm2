@@ -29,7 +29,7 @@ in an artefact are reused in the next ones (see [Conceptual model](#conceptual-m
 The profile is selected in either of these ways:
 
 - **From PROTEUS**: click *Settings* in the *Home* tab (*Application* group). In the *Profile*
-  group of the dialog, check the option to use a custom profile, select the folder of the
+  group of the dialog, check *Check to use a custom profile*, select the folder of the
   profile (e.g. `C:\proteus-profiles\pm2`) and click *OK*.
 - **Editing the `proteus.ini` file** of PROTEUS, with the application closed:
 
