@@ -104,5 +104,6 @@ Case) and run, with the Python environment of PROTEUS:
 python tools/gen.py
 ```
 
-The icons of the PM² classes are drawn in `tools/icons.py`:
-`python tools/icons.py icons`.
+The icons of the PM² classes are drawn in `tools/icons.py`: `python tools/icons.py` writes
+each one to `icons/` (toolbar, tree and menus) and to `xslt/default/resources/images/` (the
+class pills of the HTML view, which load `templates:///default/resources/images/<class>.png`).

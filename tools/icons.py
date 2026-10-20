@@ -1,5 +1,6 @@
 # Renders the 48x48 flat icons of the PM2 classes from inline SVG.
-# Usage: python tools/icons.py <icons folder> [preview.png], with the Python environment of PROTEUS (PyQt6).
+# Usage: python tools/icons.py [preview.png], with the Python environment of PROTEUS (PyQt6).
+# It writes each icon to icons/ and to xslt/default/resources/images/ of the profile.
 import os, sys
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 from PyQt6.QtCore import QByteArray, Qt, QRectF
@@ -170,15 +171,22 @@ def render(svg_body, size=48):
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
-    out = sys.argv[1]
+    profile = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # The GUI (toolbar, tree, menus) takes the icons from icons/; the pills of the
+    # HTML view take them from the images of the default template
+    # (templates:///default/resources/images/<class>.png)
+    outs = [os.path.join(profile, "icons"),
+            os.path.join(profile, "xslt", "default", "resources", "images")]
     for name, body in ICONS.items():
-        assert render(body).save(os.path.join(out, f"{name}.png")), name
-    if len(sys.argv) > 2:   # contact sheet at 2x to review the icons
+        image = render(body)
+        for out in outs:
+            assert image.save(os.path.join(out, f"{name}.png")), name
+    if len(sys.argv) > 1:   # contact sheet at 2x to review the icons
         sheet = QImage(len(ICONS) * 104, 104, QImage.Format.Format_ARGB32)
         sheet.fill(QColor("white"))
         p = QPainter(sheet)
         for i, body in enumerate(ICONS.values()):
             p.drawImage(i * 104 + 4, 4, render(body, 96))
         p.end()
-        sheet.save(sys.argv[2])
+        sheet.save(sys.argv[1])
     print(len(ICONS), "icons")
