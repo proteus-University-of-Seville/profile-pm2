@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="ben-2" classes="traceable-object benefit" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>BEN-</prefix>
+      <number>002</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Less secretariat work]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Fewer hours of the secretariat devoted to final projects.]]></markdownProperty>
+    <stringProperty name="indicator" category="detail"><![CDATA[Hours per month]]></stringProperty>
+    <stringProperty name="baseline" category="detail"><![CDATA[120]]></stringProperty>
+    <stringProperty name="target" category="detail"><![CDATA[40]]></stringProperty>
+    <traceProperty name="derives-from" category="dependencies" acceptedTargets="outcome" traceType=":Proteus-dependency">
+      <trace target="out-3" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="perceived-by" category="dependencies" acceptedTargets="stakeholder organization" traceType=":Proteus-dependency">
+      <trace target="stk-castro" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="benefit" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

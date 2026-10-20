@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="alt-1" classes="traceable-object alternative" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>ALT-</prefix>
+      <number>001</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[No hacer nada]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Seguir gestionando los trabajos por correo y hojas de cálculo.]]></markdownProperty>
+    <enumProperty name="kind" category="detail" choices="tbd do-nothing reuse simple sophisticated other">do-nothing</enumProperty>
+    <markdownProperty name="strengths" category="swot"><![CDATA[- Sin coste.
+- Sin cambios para los usuarios.]]></markdownProperty>
+    <markdownProperty name="weaknesses" category="swot"><![CDATA[- Se mantienen los errores y retrasos.
+- Alta carga de trabajo en secretaría.]]></markdownProperty>
+    <markdownProperty name="opportunities" category="swot"><![CDATA[- Ninguna.]]></markdownProperty>
+    <markdownProperty name="threats" category="swot"><![CDATA[- Incumplimiento de la obligación de tramitación electrónica.]]></markdownProperty>
+    <markdownProperty name="assessment" category="detail"><![CDATA[No viable: no cumple la base legal.]]></markdownProperty>
+    <booleanProperty name="chosen" category="detail" tooltip="chosen">false</booleanProperty>
+    <markdownProperty name="selection-rationale" category="detail"><![CDATA[]]></markdownProperty>
+    <traceProperty name="addresses" category="dependencies" acceptedTargets="business-situation" traceType=":Proteus-dependency">
+      <trace target="sit-1" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="alternative" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

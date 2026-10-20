@@ -14,9 +14,12 @@
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[The project will be considered a success if the system is in production before the first call of the 2027-28 academic year.]]></markdownProperty>
     <enumProperty name="dimension" category="detail" choices="tbd scope schedule cost quality benefits">schedule</enumProperty>
     <stringProperty name="target" category="detail"><![CDATA[2027-09-15]]></stringProperty>
+    <booleanProperty name="critical" category="detail" tooltip="critical">false</booleanProperty>
+    <enumProperty name="applies-to" category="detail" choices="tbd project product">tbd</enumProperty>
     <traceProperty name="evaluates" category="dependencies" acceptedTargets="outcome" traceType=":Proteus-dependency">
       <trace target="out-1" traceType=":Proteus-dependency"/>
     </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="success-criterion" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

@@ -11,6 +11,7 @@
     <enumProperty name="kind" category="detail" choices="tbd legislation directive policy other">tbd</enumProperty>
     <urlProperty name="reference" category="detail"><![CDATA[]]></urlProperty>
     <traceProperty name="supports" category="dependencies" acceptedTargets="strategic-goal" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="legal-basis" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

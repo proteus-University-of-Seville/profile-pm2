@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="alternative" classes="traceable-object alternative" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true"><prefix><![CDATA[ALT-]]></prefix><number>001</number><suffix><![CDATA[]]></suffix></codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Alternative]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general"><![CDATA[1.0]]></stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[_[What the alternative consists of]_.]]></markdownProperty>
+    <enumProperty name="kind" category="detail" choices="tbd do-nothing reuse simple sophisticated other">tbd</enumProperty>
+    <markdownProperty name="strengths" category="swot"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="weaknesses" category="swot"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="opportunities" category="swot"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="threats" category="swot"><![CDATA[]]></markdownProperty>
+    <markdownProperty name="assessment" category="detail"><![CDATA[]]></markdownProperty>
+    <booleanProperty name="chosen" category="detail" tooltip="chosen">false</booleanProperty>
+    <markdownProperty name="selection-rationale" category="detail"><![CDATA[]]></markdownProperty>
+    <traceProperty name="addresses" category="dependencies" acceptedTargets="business-situation" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="alternative" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

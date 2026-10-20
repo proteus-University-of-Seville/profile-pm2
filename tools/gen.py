@@ -30,7 +30,7 @@ def prop_xml(spec, lang, value=None):
         return f'<{kind}Property {a}><![CDATA[{v}]]></{kind}Property>'
     if kind == "enum":
         return f'<enumProperty {a} choices="{" ".join(ENUMS[attrs["choices"]])}">{v}</enumProperty>'
-    if kind in ("date", "boolean"):
+    if kind in ("date", "boolean", "integer", "float"):
         return f'<{kind}Property {a}>{v}</{kind}Property>'
     if kind == "unit":
         return (f'<unitProperty {a} units="{attrs["units"]}"><value>{v}</value>'
@@ -65,8 +65,38 @@ def archetype_xml(id_, lang):
     return object_xml(id_, a["classes"], a["children"], a["parents"],
                       [prop_xml(p, lang) for p in a["props"]])
 
+def place_archetypes(root):
+    """Moves the archetypes copied from basic (and the assets their file properties
+    point to) to the tab TABS gives them, and removes the generated archetypes and
+    the tab folders that are no longer used."""
+    existing = {f.stem: f for f in root.glob("*/objects/*.xml")}
+    for tab, ids in TABS.items():
+        for id_ in ids:
+            src, dst = existing.get(id_), root / tab / "objects" / f"{id_}.xml"
+            if id_ in ARCHETYPES or src is None or src == dst:
+                continue
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            for asset in etree.parse(str(src)).getroot().iterfind("properties/fileProperty"):
+                f = src.parent.parent / "assets" / (asset.text or "").strip()
+                if asset.text and f.is_file():
+                    (root / tab / "assets").mkdir(exist_ok=True)
+                    shutil.move(str(f), str(root / tab / "assets" / f.name))
+            shutil.move(str(src), str(dst))
+    listed = {(tab, id_) for tab, ids in TABS.items() for id_ in ids}
+    for f in root.glob("*/objects/*.xml"):
+        if (f.parent.parent.name, f.stem) not in listed:
+            assert f.stem in ARCHETYPES, f"{f} is not in TABS: add it or remove it by hand"
+            f.unlink()
+    for d in root.iterdir():
+        if d.is_dir() and d.name not in TABS:
+            (d / "objects.xml").unlink(missing_ok=True)
+            for sub in ("objects", "assets"):
+                if (d / sub).is_dir(): (d / sub).rmdir()   # fails if not empty: on purpose
+            d.rmdir()
+
 def write_archetypes(lang):
     root = PROFILE / "archetypes" / lang / "objects"
+    place_archetypes(root)
     for id_, a in ARCHETYPES.items():
         assert id_ in TABS[a["category"]], f"{id_} is not in the tab {a['category']}"
         write(root / a["category"] / "objects" / f"{id_}.xml", archetype_xml(id_, lang))
@@ -126,10 +156,12 @@ class Project:
         self.project_id, self.name, self.description = project_id, name_, description
 
     def add(self, archetype_id, id_, values=None, children=()):
+        assert id_ not in self.objects, f"duplicated id {id_} in {self.folder}"
         self.objects[id_] = instance(self.lang, archetype_id, id_, values, children)
         return id_
 
     def document(self, id_, props, children):
+        assert id_ not in self.objects, f"duplicated id {id_} in {self.folder}"
         self.objects[id_] = object_xml(id_, ":Proteus-document", ":Proteus-any", None, props, children)
         self.documents.append(id_)
 
@@ -183,6 +215,8 @@ def write_i18n(lang):
     for k, v in UNITS.items():      lines.append(f"archetype.enum_units.{k}: {q(v[lang])}")
     lines.append("")
     for k, v in TOOLTIPS.items():   lines.append(f"archetype.tooltip.{k}: {q(v[lang])}")
+    lines.append("")
+    for k, v in PROP_CATEGORIES.items(): lines.append(f"archetype.prop_category.{k}: {q(v[lang])}")
     write(PROFILE / "i18n" / lang / "pm2_archetypes.yaml", "\n".join(lines) + "\n")
     lines = ["# Texts of the PM2 XSLT modules", ""]
     for k, v in XSLT_LABELS.items(): lines.append(f"{k}: {q(v[lang])}")

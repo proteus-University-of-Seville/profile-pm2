@@ -10,6 +10,7 @@
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[After the project, _[desired future state]_.]]></markdownProperty>
     <traceProperty name="addresses" category="dependencies" acceptedTargets="business-situation" traceType=":Proteus-dependency"/>
     <traceProperty name="contributes-to" category="dependencies" acceptedTargets="strategic-goal" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="outcome" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

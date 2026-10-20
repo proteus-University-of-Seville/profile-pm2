@@ -13,9 +13,12 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[La situación actual afecta a los estudiantes porque los retrasos del procedimiento pueden aplazar su titulación.]]></markdownProperty>
     <enumProperty name="perspective" category="detail" choices="tbd internal external">external</enumProperty>
-    <enumProperty name="area" category="detail" choices="tbd processes people culture external-stakeholders">external-stakeholders</enumProperty>
+    <enumProperty name="area" category="detail" choices="tbd strategy processes people culture it-landscape external-stakeholders">external-stakeholders</enumProperty>
     <enumProperty name="source" category="detail" choices="tbd current-situation solution">current-situation</enumProperty>
+    <enumProperty name="severity" category="detail" choices="tbd minor moderate significant">tbd</enumProperty>
     <traceProperty name="affects" category="dependencies" acceptedTargets="stakeholder organization" traceType=":Proteus-dependency"/>
+    <traceProperty name="affected-processes" category="dependencies" acceptedTargets="business-process" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="impact" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

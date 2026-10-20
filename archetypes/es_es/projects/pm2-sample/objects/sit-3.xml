@@ -13,6 +13,8 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Actualmente, la universidad ofrece identificación única, firma electrónica y registro electrónico, que pueden reutilizarse para construir el nuevo sistema con menor coste.]]></markdownProperty>
     <enumProperty name="kind" category="detail" choices="tbd need problem opportunity">opportunity</enumProperty>
+    <markdownProperty name="urgency" category="detail"><![CDATA[]]></markdownProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="business-situation" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

@@ -1,6 +1,7 @@
 # Project archetypes of the PM2 profile: an empty project and a sample project.
 from pathlib import Path
 from model import t, DATE
+import business_case
 
 # Assets of the basic archetypes, copied into this profile
 BASIC_ASSETS = Path(__file__).resolve().parent.parent / "archetypes" / "es_es" / "objects"
@@ -97,8 +98,8 @@ def sections(p, prefix, specs, items=None, guidance=True):
 def build_empty(lang, Project, document_values):
     p = Project(lang, "pm2-empty", "pm2-empty",
                 t("PM² project", "Proyecto PM²"),
-                t("Empty PM² project with a Project Initiation Request and its organisations and stakeholders.",
-                  "Proyecto PM² vacío con una solicitud de inicio y sus organizaciones y partes interesadas."))
+                t("Empty PM² project with a Project Initiation Request, a Business Case and the organisations, stakeholders and business processes of the project.",
+                  "Proyecto PM² vacío con una solicitud de inicio, un Business Case y las organizaciones, partes interesadas y procesos de negocio del proyecto."))
     approval = p.add("approval", "pir-approval-1")
     revision = p.add("revision", "pir-revision-1")
     control = p.add("document-control", "pir-control", {}, [approval, revision])
@@ -106,7 +107,8 @@ def build_empty(lang, Project, document_values):
     secs = sections(p, "pir", PIR_SECTIONS)
     p.document("pir", document_values(lang, {"_args": ("PIR", PIR_NAME, PIR_DESCRIPTION)}),
                [control, request] + secs)
-    stk = sections(p, "stk", STK_SECTIONS)
+    business_case.empty(p, lang, document_values)
+    stk = sections(p, "stk", STK_SECTIONS + [business_case.PROCESSES_SECTION])
     p.document("stakeholders", document_values(lang, {"_args": ("STK", STK_NAME, STK_DESCRIPTION)}), stk)
     p.save()
 
@@ -117,9 +119,9 @@ def build_empty(lang, Project, document_values):
 def build_sample(lang, Project, document_values):
     p = Project(lang, "pm2-sample", "pm2-sample",
                 t("Electronic management of final projects", "Gestión electrónica de TFG y TFM"),
-                t("Sample PM² project: Project Initiation Request for the electronic management of the final "
+                t("Sample PM² project: Project Initiation Request and Business Case for the electronic management of the final "
                   "degree and master projects of a school of the University of Seville. People and figures are fictitious.",
-                  "Proyecto PM² de ejemplo: solicitud de inicio para la gestión electrónica de los trabajos fin "
+                  "Proyecto PM² de ejemplo: solicitud de inicio y Business Case para la gestión electrónica de los trabajos fin "
                   "de grado y fin de máster de una escuela de la Universidad de Sevilla. Las personas y las cifras son ficticias."))
 
     # --- organisations and stakeholders --------------------------------------------------
@@ -165,7 +167,11 @@ def build_sample(lang, Project, document_values):
                   "spreadsheets, which causes errors, duplicated work and delays in the secretariat.",
                   "Actualmente, las propuestas, asignaciones y defensas de los trabajos fin de estudios se "
                   "gestionan por correo electrónico y hojas de cálculo, lo que provoca errores, trabajo "
-                  "duplicado y retrasos en la secretaría."), kind="problem")
+                  "duplicado y retrasos en la secretaría."), kind="problem",
+                urgency=t("High: the errors already delay the graduation of some students, and the new "
+                          "regulations apply from the 2027-28 academic year.",
+                          "Alta: los errores ya retrasan la titulación de algunos estudiantes, y la nueva "
+                          "normativa se aplica desde el curso 2027-28."))
     sit2 = item("business-situation", "sit-2", "002", t("Electronic processing required", "Tramitación electrónica obligatoria"),
                 t("Currently, administrative procedures must be processed electronically, which requires "
                   "the school to digitise the whole life cycle of final projects.",
@@ -236,13 +242,13 @@ def build_sample(lang, Project, document_values):
     sc3 = item("success-criterion", "sc-3", "003", t("Within the estimated effort", "Dentro del esfuerzo estimado"),
                t("The project will be considered a success if it does not exceed the estimated effort by more than 10 %.",
                  "El proyecto se considerará un éxito si no supera en más de un 10 % el esfuerzo estimado."),
-               dimension="cost", target="≤ 132 PD")
+               dimension="cost", target=t("132 person-days at most", "132 días-persona como máximo"))
     sc4 = item("success-criterion", "sc-4", "004", t("User satisfaction", "Satisfacción de los usuarios"),
                t("The project will be considered a success if students and supervisors rate the system with "
                  "at least 4 out of 5 in the first satisfaction survey.",
                  "El proyecto se considerará un éxito si estudiantes y tutores valoran el sistema con al menos "
                  "un 4 sobre 5 en la primera encuesta de satisfacción."),
-               dimension="quality", target="≥ 4 / 5", evaluates=[out2])
+               dimension="quality", target=t("4 out of 5 or more", "4 sobre 5 o más"), evaluates=[out2])
     rsk1 = item("risk", "rsk-1", "001", t("Staff not available", "Personal no disponible"),
                 t("Because of the overlap with the enrolment period, it might be that the IT staff are not "
                   "available, which will lead to delays in the development.",
@@ -315,8 +321,14 @@ def build_sample(lang, Project, document_values):
         "document-author": [initiator], "project-manager": [pm],
         "document-location": t("the document management system of the school", "el gestor documental de la escuela"),
         "prepared-for": [us], "prepared-by": [school]}), [control, request] + secs)
-    stk = sections(p, "stk", STK_SECTIONS, {"organisations": [us, school, board, sic],
-                                            "stakeholders": [po, initiator, secretary, sp, pm]}, guidance=False)
+    processes = business_case.sample(p, lang, document_values, {
+        "us": us, "school": school, "sic": sic, "board": board, "po": po, "sp": sp, "pm": pm,
+        "secretary": secretary, "sit-1": sit1, "sit-2": sit2, "sit-3": sit3, "out-1": out1,
+        "out-2": out2, "out-3": out3, "sc-2": sc2, "asm-2": asm2})
+    stk = sections(p, "stk", STK_SECTIONS + [business_case.PROCESSES_SECTION],
+                   {"organisations": [us, school, board, sic],
+                    "stakeholders": [po, initiator, secretary, sp, pm],
+                    "processes": processes}, guidance=False)
     p.document("stakeholders", document_values(lang, {
         "_args": ("STK", STK_NAME, STK_DESCRIPTION), "version": "1.0",
         "document-author": [initiator], "project-manager": [pm],

@@ -17,6 +17,7 @@
     <traceProperty name="may-become" category="dependencies" acceptedTargets="risk" traceType=":Proteus-dependency">
       <trace target="rsk-1" traceType=":Proteus-dependency"/>
     </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="assumption" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="bc-approval-1" classes="approval" acceptedChildren=":Proteus-none" acceptedParents="document-control">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Approval by the School Board]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <traceProperty name="approver" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="stk-ruiz" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <enumProperty name="action" category="general" choices="approve review optional-review">approve</enumProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="rsk-4" classes="traceable-object risk" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>RSK-</prefix>
+      <number>004</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Integración con la firma electrónica]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="risk-pattern"><![CDATA[Debido a la actualización prevista del servicio de firma electrónica, podría ocurrir que su interfaz cambie durante el proyecto, lo que provocaría retrasos en la integración.]]></markdownProperty>
+    <enumProperty name="category" category="detail" choices="tbd business staffing contractor legal technical other">technical</enumProperty>
+    <enumProperty name="status" category="detail" choices="proposed assessing awaiting-approval approved rejected closed">assessing</enumProperty>
+    <traceProperty name="identified-by" category="detail" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <enumProperty name="likelihood" category="detail" choices="tbd very-low low medium high very-high">low</enumProperty>
+    <enumProperty name="impact" category="detail" choices="tbd very-low low medium high very-high">medium</enumProperty>
+    <traceProperty name="risk-owner" category="detail" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <enumProperty name="response-strategy" category="detail" choices="tbd avoid reduce accept transfer-share">reduce</enumProperty>
+    <markdownProperty name="actions" category="detail"><![CDATA[Acordar la versión de la interfaz con el servicio de administración electrónica antes del desarrollo.]]></markdownProperty>
+    <booleanProperty name="escalation" category="detail">false</booleanProperty>
+    <traceProperty name="related" category="dependencies" acceptedTargets="assumption constraint" traceType=":Proteus-dependency">
+      <trace target="asm-2" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="risk" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

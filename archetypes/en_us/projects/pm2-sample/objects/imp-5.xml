@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="imp-5" classes="traceable-object impact" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>IMP-</prefix>
+      <number>005</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Systems in use]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[The current situation affects the IT landscape because students and supervisors use e-mail, the virtual campus and shared folders, which are not integrated with the registry.]]></markdownProperty>
+    <enumProperty name="perspective" category="detail" choices="tbd internal external">internal</enumProperty>
+    <enumProperty name="area" category="detail" choices="tbd strategy processes people culture it-landscape external-stakeholders">it-landscape</enumProperty>
+    <enumProperty name="source" category="detail" choices="tbd current-situation solution">current-situation</enumProperty>
+    <enumProperty name="severity" category="detail" choices="tbd minor moderate significant">moderate</enumProperty>
+    <traceProperty name="affects" category="dependencies" acceptedTargets="stakeholder organization" traceType=":Proteus-dependency"/>
+    <traceProperty name="affected-processes" category="dependencies" acceptedTargets="business-process" traceType=":Proteus-dependency">
+      <trace target="bp-1" traceType=":Proteus-dependency"/>
+      <trace target="bp-2" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="impact" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

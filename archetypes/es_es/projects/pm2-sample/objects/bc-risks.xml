@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="bc-risks" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Riesgos]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="bc-link-rsk-1"/>
+    <child id="bc-link-rsk-2"/>
+    <child id="bc-link-rsk-3"/>
+    <child id="rsk-4"/>
+  </children>
+</object>

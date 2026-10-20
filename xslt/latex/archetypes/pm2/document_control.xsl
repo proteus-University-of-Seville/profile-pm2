@@ -54,8 +54,12 @@
   >
     <xsl:variable name="document"
       select="ancestor::object[contains(concat(' ', normalize-space(@classes), ' '), ' :Proteus-document ')][1]"/>
+    <!-- The initiation request of the document or, if it has none (e.g. a Business -->
+    <!-- Case that only links to it), the first one of the project                  -->
+    <xsl:variable name="request_in_document"
+      select="($document//object[contains(concat(' ', normalize-space(@classes), ' '), ' initiation-request ')])[1]"/>
     <xsl:variable name="request"
-      select="$document//object[contains(concat(' ', normalize-space(@classes), ' '), ' initiation-request ')][1]"/>
+      select="$request_in_document | (//object[contains(concat(' ', normalize-space(@classes), ' '), ' initiation-request ')])[not($request_in_document)][1]"/>
 
     <xsl:variable name="rows">
       <xsl:call-template name="document_control_row">

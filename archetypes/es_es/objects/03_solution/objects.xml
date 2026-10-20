@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects>
+  <object id="alternative" />
+  <object id="scope-item" />
+  <object id="deliverable" />
+  <object id="milestone" />
+  <object id="cost-plan" />
+  <object id="cost-item" />
+</objects>

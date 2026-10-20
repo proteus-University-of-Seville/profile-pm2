@@ -19,6 +19,7 @@
     <traceProperty name="contributes-to" category="dependencies" acceptedTargets="strategic-goal" traceType=":Proteus-dependency">
       <trace target="sg-1" traceType=":Proteus-dependency"/>
     </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="outcome" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="bc-success" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Criterios de éxito]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="bc-link-sc-1"/>
+    <child id="bc-link-sc-3"/>
+    <child id="bc-link-sc-4"/>
+    <child id="sc-5"/>
+    <child id="sc-6"/>
+  </children>
+</object>

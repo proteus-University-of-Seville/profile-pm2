@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="bc-cost-plan" classes="cost-plan" acceptedChildren="cost-item" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name" category="general">Costs, effort and funding source</stringProperty>
+    <integerProperty name="first-year" category="detail" tooltip="first-year">2027</integerProperty>
+    <markdownProperty name="funding-source" category="detail"><![CDATA[Staff of the IT services and of the school, funded by their ordinary budgets; other costs funded by the digital transformation plan of the university.]]></markdownProperty>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="cost-1"/>
+    <child id="cost-2"/>
+    <child id="cost-3"/>
+    <child id="cost-4"/>
+    <child id="cost-5"/>
+    <child id="cost-6"/>
+    <child id="cost-7"/>
+  </children>
+</object>

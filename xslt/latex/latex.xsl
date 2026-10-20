@@ -52,6 +52,8 @@
 
   <!-- PM2 archetype modules -->
   <xsl:include href="archetypes/pm2/document_control.xsl" />
+  <xsl:include href="archetypes/pm2/alternative.xsl" />
+  <xsl:include href="archetypes/pm2/cost_plan.xsl" />
   <xsl:include href="archetypes/pm2/risk.xsl" />
 
   <!-- Default archetype module -->

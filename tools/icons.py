@@ -95,6 +95,67 @@ ICONS = {
   <circle cx="25" cy="25" r="13" fill="#EFF6FF"/>
   <path d="M25 16v9.5l6 4" fill="none" stroke="#1E40AF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M3 21l5-8 6 7z" fill="#1E40AF"/>""",
+# --- Business Case ---
+# three steps of a process
+"business-process": """
+  <rect x="3" y="18" width="12" height="12" rx="2.5" fill="#0F766E"/>
+  <rect x="18" y="18" width="12" height="12" rx="2.5" fill="#14B8A6"/>
+  <rect x="33" y="18" width="12" height="12" rx="2.5" fill="#0F766E"/>
+  <path d="M15 24h3M30 24h3" stroke="#334155" stroke-width="2.5"/>
+  <path d="M9 30v8h30v-8" fill="none" stroke="#5EEAD4" stroke-width="2.5"/>
+  <path d="M35 34l4 4 4-4" fill="none" stroke="#5EEAD4" stroke-width="2.5" stroke-linejoin="round"/>""",
+# signpost with two ways
+"alternative": """
+  <rect x="22" y="6" width="4" height="38" rx="1.5" fill="#475569"/>
+  <path d="M8 9h24l6 5-6 5H8z" fill="#7E22CE"/>
+  <path d="M40 22H16l-6 5 6 5h24z" fill="#C084FC"/>
+  <rect x="17" y="42" width="14" height="3" rx="1.5" fill="#475569"/>""",
+# bar chart with a rising arrow
+"benefit": """
+  <rect x="6" y="30" width="8" height="13" rx="1.5" fill="#6EE7B7"/>
+  <rect x="18" y="23" width="8" height="20" rx="1.5" fill="#34D399"/>
+  <rect x="30" y="15" width="8" height="28" rx="1.5" fill="#059669"/>
+  <path d="M6 22L19 11l7 5L40 5" fill="none" stroke="#065F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M33 4h8v8" fill="none" stroke="#065F46" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>""",
+# boundary with something inside and something outside
+"scope-item": """
+  <rect x="5" y="5" width="30" height="30" rx="4" fill="#E0E7FF" stroke="#4338CA" stroke-width="2.5" stroke-dasharray="5 3"/>
+  <circle cx="20" cy="20" r="7" fill="#4338CA"/>
+  <circle cx="39" cy="39" r="6" fill="#A5B4FC"/>""",
+# parcel
+"deliverable": """
+  <path d="M24 4l19 9v22l-19 9-19-9V13z" fill="#D97706"/>
+  <path d="M24 4l19 9-19 9-19-9z" fill="#FBBF24"/>
+  <path d="M24 22v22" stroke="#B45309" stroke-width="2"/>
+  <path d="M14 8.5l19 9v7" fill="none" stroke="#FEF3C7" stroke-width="3"/>""",
+# diamond on a time line
+"milestone": """
+  <rect x="3" y="33" width="42" height="3" rx="1.5" fill="#94A3B8"/>
+  <path d="M24 8l11 11-11 11-11-11z" fill="#DB2777"/>
+  <rect x="22.5" y="30" width="3" height="9" fill="#DB2777"/>
+  <circle cx="8" cy="34.5" r="3" fill="#64748B"/>
+  <circle cx="40" cy="34.5" r="3" fill="#64748B"/>""",
+# two chain links
+"interdependency": """
+  <rect x="4" y="16" width="24" height="16" rx="8" fill="none" stroke="#A21CAF" stroke-width="4.5"/>
+  <rect x="20" y="16" width="24" height="16" rx="8" fill="none" stroke="#E879F9" stroke-width="4.5"/>
+  <path d="M28 18.5a8 8 0 0 1 0 11" fill="none" stroke="#A21CAF" stroke-width="4.5"/>""",
+# stack of coins
+"cost-plan": """
+  <ellipse cx="18" cy="36" rx="13" ry="5" fill="#A16207"/>
+  <rect x="5" y="28" width="26" height="8" fill="#CA8A04"/>
+  <ellipse cx="18" cy="28" rx="13" ry="5" fill="#FACC15"/>
+  <rect x="5" y="20" width="26" height="8" fill="#CA8A04"/>
+  <ellipse cx="18" cy="20" rx="13" ry="5" fill="#FDE047"/>
+  <circle cx="35" cy="15" r="10" fill="#EAB308" stroke="#A16207" stroke-width="2"/>
+  <path d="M38 11.5a4.5 4.5 0 1 0 0 7M30 14h6M30 16.5h6" fill="none" stroke="#713F12" stroke-width="1.8" stroke-linecap="round"/>""",
+# receipt
+"cost-item": """
+  <path d="M10 4h28v40l-4.7-3-4.7 3-4.6-3-4.7 3-4.6-3L10 44z" fill="#CA8A04"/>
+  <rect x="15" y="11" width="18" height="2.5" fill="#FEF9C3"/>
+  <rect x="15" y="17" width="18" height="2.5" fill="#FEF9C3"/>
+  <rect x="15" y="23" width="11" height="2.5" fill="#FEF9C3"/>
+  <rect x="25" y="30" width="8" height="3" fill="#713F12"/>""",
 }
 
 def render(svg_body, size=48):

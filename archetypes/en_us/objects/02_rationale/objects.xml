@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects>
-  <object id="initiation-request" />
   <object id="business-situation" />
   <object id="strategic-goal" />
   <object id="legal-basis" />
   <object id="outcome" />
   <object id="impact" />
+  <object id="benefit" />
 </objects>

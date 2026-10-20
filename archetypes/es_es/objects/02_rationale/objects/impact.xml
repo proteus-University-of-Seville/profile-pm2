@@ -9,9 +9,12 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[_[La situación actual / la solución]_ afecta a _[procesos, personas o partes interesadas]_ porque _[motivo]_.]]></markdownProperty>
     <enumProperty name="perspective" category="detail" choices="tbd internal external">tbd</enumProperty>
-    <enumProperty name="area" category="detail" choices="tbd processes people culture external-stakeholders">tbd</enumProperty>
+    <enumProperty name="area" category="detail" choices="tbd strategy processes people culture it-landscape external-stakeholders">tbd</enumProperty>
     <enumProperty name="source" category="detail" choices="tbd current-situation solution">tbd</enumProperty>
+    <enumProperty name="severity" category="detail" choices="tbd minor moderate significant">tbd</enumProperty>
     <traceProperty name="affects" category="dependencies" acceptedTargets="stakeholder organization" traceType=":Proteus-dependency"/>
+    <traceProperty name="affected-processes" category="dependencies" acceptedTargets="business-process" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="impact" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

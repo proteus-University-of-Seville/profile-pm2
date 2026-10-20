@@ -13,6 +13,7 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[El proyecto debe usar las tecnologías e infraestructura soportadas por el SIC.]]></markdownProperty>
     <enumProperty name="area" category="detail" choices="tbd schedule budget resources products decisions compliance organisation external-environment">products</enumProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="constraint" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="bp-2" classes="traceable-object business-process" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>BP-</prefix>
+      <number>002</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Registry and filing]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Registration and filing of the documents of the administrative procedures of the university.]]></markdownProperty>
+    <enumProperty name="process-category" category="detail" choices="tbd policy-lifecycle legislation-lifecycle coordination programme-management grant-management external-communication internal-communication strategic-management financial-management procurement document-management asset-management audit human-resources it other">document-management</enumProperty>
+    <stringProperty name="domain" category="detail"><![CDATA[Administration]]></stringProperty>
+    <stringProperty name="sub-domain" category="detail"><![CDATA[Electronic administration]]></stringProperty>
+    <stringProperty name="macro-process" category="detail"><![CDATA[Document management]]></stringProperty>
+    <traceProperty name="owner" category="detail" acceptedTargets="organization stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1">
+      <trace target="org-us" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="business-process" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

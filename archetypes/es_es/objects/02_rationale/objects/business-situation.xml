@@ -9,6 +9,8 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Actualmente, _[situación actual]_, lo que provoca _[consecuencia para el negocio]_.]]></markdownProperty>
     <enumProperty name="kind" category="detail" choices="tbd need problem opportunity">tbd</enumProperty>
+    <markdownProperty name="urgency" category="detail"><![CDATA[]]></markdownProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="business-situation" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

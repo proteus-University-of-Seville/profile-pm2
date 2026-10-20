@@ -24,6 +24,7 @@
     <markdownProperty name="actions" category="detail"><![CDATA[]]></markdownProperty>
     <booleanProperty name="escalation" category="detail">false</booleanProperty>
     <traceProperty name="related" category="dependencies" acceptedTargets="assumption constraint" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="risk" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

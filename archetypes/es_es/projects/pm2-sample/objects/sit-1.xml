@@ -13,6 +13,8 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Actualmente, las propuestas, asignaciones y defensas de los trabajos fin de estudios se gestionan por correo electrónico y hojas de cálculo, lo que provoca errores, trabajo duplicado y retrasos en la secretaría.]]></markdownProperty>
     <enumProperty name="kind" category="detail" choices="tbd need problem opportunity">problem</enumProperty>
+    <markdownProperty name="urgency" category="detail"><![CDATA[Alta: los errores ya retrasan la titulación de algunos estudiantes, y la nueva normativa se aplica desde el curso 2027-28.]]></markdownProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="business-situation" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

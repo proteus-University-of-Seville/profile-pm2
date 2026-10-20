@@ -13,6 +13,8 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Currently, proposals, assignments and defences of final projects are handled by e-mail and spreadsheets, which causes errors, duplicated work and delays in the secretariat.]]></markdownProperty>
     <enumProperty name="kind" category="detail" choices="tbd need problem opportunity">problem</enumProperty>
+    <markdownProperty name="urgency" category="detail"><![CDATA[High: the errors already delay the graduation of some students, and the new regulations apply from the 2027-28 academic year.]]></markdownProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="business-situation" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

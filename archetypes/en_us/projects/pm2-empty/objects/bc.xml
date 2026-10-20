@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="bc" classes=":Proteus-document" acceptedChildren=":Proteus-any">
+  <properties>
+    <stringProperty name=":Proteus-acronym" category="general"><![CDATA[BC]]></stringProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Business Case]]></stringProperty>
+    <stringProperty name="version" category="general"><![CDATA[0.1]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <enumProperty name="sensitivity" category="general" choices="public sensitive-basic sensitive-high">public</enumProperty>
+    <traceProperty name="document-author" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <traceProperty name="project-manager" category="general" acceptedTargets="stakeholder" traceType=":Proteus-dependency" maxTargetsNumber="1"/>
+    <stringProperty name="document-location" category="general" tooltip="document-location"><![CDATA[]]></stringProperty>
+    <markdownProperty name="description" category="detail"><![CDATA[Justification of the project: alternatives, chosen solution, benefits and costs (PM² artefact of the initiating phase).]]></markdownProperty>
+    <traceProperty name="prepared-for" category="dependencies" acceptedTargets="organization" traceType=":Proteus-dependency"/>
+    <traceProperty name="prepared-by" category="dependencies" acceptedTargets="organization" traceType=":Proteus-author"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="bc-control"/>
+    <child id="bc-request"/>
+    <child id="bc-context"/>
+    <child id="bc-outcomes"/>
+    <child id="bc-alternatives"/>
+    <child id="bc-solution"/>
+    <child id="bc-governance"/>
+    <child id="bc-references"/>
+  </children>
+</object>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="dlv-2" classes="traceable-object deliverable" acceptedChildren=":Proteus-none" acceptedParents=":Proteus-document section">
+  <properties>
+    <codeProperty name=":Proteus-code" category="general" inmutable="true">
+      <prefix>DLV-</prefix>
+      <number>002</number>
+      <suffix></suffix>
+    </codeProperty>
+    <stringProperty name=":Proteus-name" category="general"><![CDATA[Redesigned procedure]]></stringProperty>
+    <dateProperty name=":Proteus-date" category="general">2026-10-19</dateProperty>
+    <stringProperty name="version" category="general">1.0</stringProperty>
+    <traceProperty name="authors" category="general" acceptedTargets="stakeholder" traceType=":Proteus-author"/>
+    <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
+    <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[Electronic procedure approved by the School Board, which replaces the current one.]]></markdownProperty>
+    <enumProperty name="kind" category="detail" choices="tbd process information-system policy service platform plan event training other">process</enumProperty>
+    <traceProperty name="within" category="dependencies" acceptedTargets="scope-item" traceType=":Proteus-dependency">
+      <trace target="scp-2" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="contributes-to" category="dependencies" acceptedTargets="outcome" traceType=":Proteus-dependency">
+      <trace target="out-1" traceType=":Proteus-dependency"/>
+    </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="deliverable" traceType=":Proteus-dependency"/>
+    <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children/>
+</object>

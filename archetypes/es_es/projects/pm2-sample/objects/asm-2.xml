@@ -15,6 +15,7 @@
     <enumProperty name="area" category="detail" choices="tbd business technology resources organisation scope expectations schedule">technology</enumProperty>
     <enumProperty name="validation" category="detail" tooltip="validation" choices="not-validated validated invalidated">validated</enumProperty>
     <traceProperty name="may-become" category="dependencies" acceptedTargets="risk" traceType=":Proteus-dependency"/>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="assumption" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

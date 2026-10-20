@@ -13,10 +13,13 @@
     <traceProperty name="sources" category="general" acceptedTargets="stakeholder" traceType=":Proteus-information-source"/>
     <markdownProperty name="description" category="detail" tooltip="pattern"><![CDATA[The project will be considered a success if students and supervisors rate the system with at least 4 out of 5 in the first satisfaction survey.]]></markdownProperty>
     <enumProperty name="dimension" category="detail" choices="tbd scope schedule cost quality benefits">quality</enumProperty>
-    <stringProperty name="target" category="detail"><![CDATA[≥ 4 / 5]]></stringProperty>
+    <stringProperty name="target" category="detail"><![CDATA[4 out of 5 or more]]></stringProperty>
+    <booleanProperty name="critical" category="detail" tooltip="critical">false</booleanProperty>
+    <enumProperty name="applies-to" category="detail" choices="tbd project product">tbd</enumProperty>
     <traceProperty name="evaluates" category="dependencies" acceptedTargets="outcome" traceType=":Proteus-dependency">
       <trace target="out-2" traceType=":Proteus-dependency"/>
     </traceProperty>
+    <traceProperty name="refines" category="dependencies" tooltip="refines" acceptedTargets="success-criterion" traceType=":Proteus-dependency"/>
     <markdownProperty name="comments" category="comments"><![CDATA[]]></markdownProperty>
   </properties>
   <children/>

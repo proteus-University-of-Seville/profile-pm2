@@ -23,6 +23,15 @@
 .proteus_table.document-control,
 .proteus_table.approval,
 .proteus_table.revision           { --accent: #1e40af; }
+.proteus_table.business-process   { --accent: #0f766e; }
+.proteus_table.alternative        { --accent: #7e22ce; }
+.proteus_table.benefit            { --accent: #059669; }
+.proteus_table.scope-item         { --accent: #4338ca; }
+.proteus_table.deliverable        { --accent: #b45309; }
+.proteus_table.milestone          { --accent: #db2777; }
+.proteus_table.interdependency    { --accent: #a21caf; }
+.proteus_table.cost-plan          { --accent: #ca8a04; }
+.proteus_table.cost-item          { --accent: #ca8a04; }
 
 table.proteus_table > tbody > tr.risk_escalation > td {
   color: #dc2626;
@@ -89,4 +98,86 @@ table.document_control_list > tbody > tr:hover {
 
 p.document_location {
   font-style: italic;
+}
+
+/* ------------------------------------------------------- */
+/* Business Case: SWOT grid of the alternatives            */
+/* ------------------------------------------------------- */
+
+table.swot {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 6px;
+  table-layout: fixed;
+}
+
+table.proteus_table > tbody > tr > td table.swot td {
+  width: 50%;
+  vertical-align: top;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+table.swot td.swot_strengths     { background: #ecfdf5; }
+table.swot td.swot_weaknesses    { background: #fef2f2; }
+table.swot td.swot_opportunities { background: #eff6ff; }
+table.swot td.swot_threats       { background: #fff7ed; }
+
+table.swot div.swot_label {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+/* ------------------------------------------------------- */
+/* Business Case: Total Cost of Ownership tables           */
+/* ------------------------------------------------------- */
+
+table.cost_table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+table.cost_table > caption {
+  text-align: left;
+  font-weight: bold;
+  padding: 0 0 0.4em;
+}
+
+table.proteus_table > tbody > tr > td table.cost_table th,
+table.proteus_table > tbody > tr > td table.cost_table td {
+  border: 1px solid #dfe3e8;
+  padding: 4px 10px;
+}
+
+table.cost_table thead th {
+  background: #fefce8;
+  text-align: center;
+}
+
+table.cost_table tbody th {
+  text-align: left;
+  font-weight: normal;
+}
+
+table.cost_table tbody td {
+  text-align: right;
+  white-space: nowrap;
+}
+
+table.cost_table span.cost_unit {
+  color: #5b6675;
+  font-size: 0.9em;
+}
+
+table.cost_table tr.cost_total th,
+table.cost_table tr.cost_total td {
+  font-weight: bold;
+  background: #fafaf9;
+}
+
+table.cost_table tbody > tr[data-proteus-id]:hover {
+  background: #fafbfc;
+  cursor: pointer;
 }

@@ -18,7 +18,28 @@ ENUMS = {
     "situation-kind": ["tbd", "need", "problem", "opportunity"],
     "legal-kind": ["tbd", "legislation", "directive", "policy", "other"],
     "perspective": ["tbd", "internal", "external"],
-    "impact-area": ["tbd", "processes", "people", "culture", "external-stakeholders"],
+    "impact-area": ["tbd", "strategy", "processes", "people", "culture", "it-landscape",
+                    "external-stakeholders"],
+    "severity": ["tbd", "minor", "moderate", "significant"],
+    "applies-to": ["tbd", "project", "product"],
+    "process-category": ["tbd", "policy-lifecycle", "legislation-lifecycle", "coordination",
+                         "programme-management", "grant-management", "external-communication",
+                         "internal-communication", "strategic-management", "financial-management",
+                         "procurement", "document-management", "asset-management", "audit",
+                         "human-resources", "it", "other"],
+    "alternative-kind": ["tbd", "do-nothing", "reuse", "simple", "sophisticated", "other"],
+    "inclusion": ["in", "out"],
+    "scope-kind": ["tbd", "output", "process", "organisation", "location", "other"],
+    "deliverable-kind": ["tbd", "process", "information-system", "policy", "service", "platform",
+                         "plan", "event", "training", "other"],
+    "milestone-kind": ["milestone", "start", "delivery"],
+    "dependency-kind": ["tbd", "interrelation", "dependency", "synergy", "it-reuse", "it-request",
+                        "it-sharing"],
+    "dependency-scope": ["tbd", "internal", "external"],
+    "cost-group": ["solution-implementation", "business-implementation"],
+    "cost-category": ["tbd", "development", "maintenance", "support", "training", "infrastructure",
+                      "change-management", "start-up", "coordination", "other"],
+    "cost-nature": ["other-costs", "staff"],
     "impact-source": ["tbd", "current-situation", "solution"],
     "dimension": ["tbd", "scope", "schedule", "cost", "quality", "benefits"],
     "assumption-area": ["tbd", "business", "technology", "resources", "organisation",
@@ -96,6 +117,63 @@ CHOICE_LABELS = {
     "approve": t("Approve", "Aprobar"),
     "review": t("Review", "Revisar"),
     "optional-review": t("Review (optional)", "Revisar (opcional)"),
+    # Business Case
+    "strategy": t("Strategy", "Estrategia"),
+    "it-landscape": t("IT landscape", "Panorama TI"),
+    "minor": t("Minor", "Menor"),
+    "moderate": t("Moderate", "Moderado"),
+    "significant": t("Significant", "Significativo"),
+    "project": t("Project", "Proyecto"),
+    "product": t("Product", "Producto"),
+    "policy-lifecycle": t("Policy lifecycle", "Ciclo de vida de políticas"),
+    "legislation-lifecycle": t("Legislation lifecycle", "Ciclo de vida legislativo"),
+    "coordination": t("Coordination", "Coordinación"),
+    "programme-management": t("Programme management", "Gestión de programas"),
+    "grant-management": t("Grant management", "Gestión de subvenciones"),
+    "external-communication": t("Communication and dissemination (external)", "Comunicación y difusión (externa)"),
+    "internal-communication": t("Communication and dissemination (internal)", "Comunicación y difusión (interna)"),
+    "strategic-management": t("Strategic management", "Gestión estratégica"),
+    "financial-management": t("Financial management", "Gestión financiera"),
+    "procurement": t("Procurement", "Contratación"),
+    "document-management": t("Document management", "Gestión documental"),
+    "asset-management": t("Asset management", "Gestión de activos"),
+    "audit": t("Audit", "Auditoría"),
+    "human-resources": t("Human resources", "Recursos humanos"),
+    "it": t("IT", "TI"),
+    "do-nothing": t("Do nothing", "No hacer nada"),
+    "reuse": t("Reuse an existing solution", "Reutilizar una solución existente"),
+    "simple": t("Simple solution (develop or buy and customise)", "Solución sencilla (desarrollar o comprar y adaptar)"),
+    "sophisticated": t("Sophisticated solution (develop or buy and customise)", "Solución sofisticada (desarrollar o comprar y adaptar)"),
+    "in": t("In scope", "Dentro del alcance"),
+    "out": t("Out of scope", "Fuera del alcance"),
+    "output": t("Output", "Producto o resultado"),
+    "process": t("Process", "Proceso"),
+    "location": t("Location", "Ubicación"),
+    "information-system": t("Information system", "Sistema de información"),
+    "service": t("Service", "Servicio"),
+    "platform": t("Platform", "Plataforma"),
+    "plan": t("Plan or strategy", "Plan o estrategia"),
+    "event": t("Event", "Evento"),
+    "training": t("Training", "Formación"),
+    "milestone": t("Milestone", "Hito"),
+    "start": t("Project start", "Inicio del proyecto"),
+    "delivery": t("Project delivery", "Entrega del proyecto"),
+    "interrelation": t("Interrelation", "Interrelación"),
+    "dependency": t("Interdependency", "Interdependencia"),
+    "synergy": t("Synergy", "Sinergia"),
+    "it-reuse": t("Reused IT service or component", "Servicio o componente TI reutilizado"),
+    "it-request": t("Requested common IT service or component", "Servicio o componente TI común solicitado"),
+    "it-sharing": t("IT service or component made reusable", "Servicio o componente TI que se hará reutilizable"),
+    "solution-implementation": t("Solution implementation", "Implantación de la solución"),
+    "business-implementation": t("Business implementation", "Implantación en el negocio"),
+    "development": t("Solution development", "Desarrollo de la solución"),
+    "maintenance": t("Solution maintenance", "Mantenimiento de la solución"),
+    "support": t("Support", "Soporte"),
+    "infrastructure": t("Infrastructure", "Infraestructura"),
+    "change-management": t("Change management", "Gestión del cambio"),
+    "start-up": t("Start-up costs", "Costes de puesta en marcha"),
+    "other-costs": t("Other costs (k€)", "Otros costes (k€)"),
+    "staff": t("Staff (FTE)", "Personal (ETC)"),
 }
 
 # ---------------------------------------------------------------------------
@@ -146,6 +224,48 @@ PROP_NAMES = {
     "revision": t("Revision", "Revisión"),
     "created-by": t("Created by", "Creada por"),
     "changes": t("Changes", "Cambios"),
+    # Business Case
+    "refines": t("Refines", "Refina"),
+    "urgency": t("Urgency", "Urgencia"),
+    "severity": t("Impact on owners and users", "Impacto en responsables y usuarios"),
+    "affected-processes": t("Affected processes", "Procesos afectados"),
+    "critical": t("Critical", "Crítico"),
+    "applies-to": t("Applies to", "Se aplica a"),
+    "process-category": t("Process category", "Categoría de proceso"),
+    "domain": t("Domain", "Dominio"),
+    "sub-domain": t("Sub-domain", "Subdominio"),
+    "macro-process": t("Macro process", "Macroproceso"),
+    "strengths": t("Strengths", "Fortalezas"),
+    "weaknesses": t("Weaknesses", "Debilidades"),
+    "opportunities": t("Opportunities", "Oportunidades"),
+    "threats": t("Threats", "Amenazas"),
+    "assessment": t("Qualitative assessment", "Valoración cualitativa"),
+    "chosen": t("Chosen alternative", "Alternativa elegida"),
+    "selection-rationale": t("Reasons for the choice", "Motivos de la elección"),
+    "indicator": t("Indicator", "Indicador"),
+    "baseline": t("Baseline", "Valor de partida"),
+    "derives-from": t("Derives from", "Procede de"),
+    "perceived-by": t("Perceived by", "Percibido por"),
+    "inclusion": t("Inclusion", "Inclusión"),
+    "realises": t("Realises", "Materializa"),
+    "within": t("Within the scope item", "Dentro del elemento de alcance"),
+    "planned-date": t("Planned date", "Fecha prevista"),
+    "delivers": t("Delivers", "Entrega"),
+    "scope": t("Scope", "Ámbito"),
+    "first-year": t("First year", "Primer año"),
+    "funding-source": t("Funding source", "Fuente de financiación"),
+    "group": t("Group", "Grupo"),
+    "nature": t("Nature", "Naturaleza"),
+    "year-1": t("Year 1", "Año 1"),
+    "year-2": t("Year 2", "Año 2"),
+    "year-3": t("Year 3", "Año 3"),
+    "year-4": t("Year 4", "Año 4"),
+    "year-5": t("Year 5", "Año 5"),
+}
+
+PROP_CATEGORIES = {
+    "swot": t("SWOT", "DAFO"),
+    "costs": t("Costs", "Costes"),
 }
 
 TOOLTIPS = {
@@ -161,6 +281,16 @@ TOOLTIPS = {
                     "Los supuestos se toman como hechos pero deben validarse; si no se validan, pueden convertirse en riesgos."),
     "document-location": t("Where the latest version of this controlled document is stored.",
                            "Dónde se guarda la última versión de este documento controlado."),
+    "refines": t("Object of a previous artefact that this one refines (e.g. a success criterion of the Project Initiation Request refined in the Business Case).",
+                 "Objeto de un artefacto anterior que este refina (p. ej., un criterio de éxito de la solicitud de inicio refinado en el Business Case)."),
+    "critical": t("Without it, the project cannot be considered a success.",
+                  "Sin él, el proyecto no puede considerarse un éxito."),
+    "chosen": t("The alternative recommended and described in the solution.",
+                "La alternativa recomendada, que se describe en la solución."),
+    "first-year": t("Year of the first column of the cost tables; costs are given for 5 years.",
+                    "Año de la primera columna de las tablas de costes; los costes se dan para 5 años."),
+    "cost-nature": t("Staff costs are given in full-time equivalents (FTE), other costs in thousands of euros (k€).",
+                     "Los costes de personal se dan en equivalentes a tiempo completo (ETC) y el resto en miles de euros (k€)."),
 }
 
 CLASSES = {
@@ -177,12 +307,22 @@ CLASSES = {
     "document-control": t("Document\\ncontrol", "Control del\\ndocumento"),
     "approval": t("Approval", "Aprobación"),
     "revision": t("Revision", "Revisión"),
+    "business-process": t("Business\\nprocess", "Proceso de\\nnegocio"),
+    "alternative": t("Alternative", "Alternativa"),
+    "benefit": t("Benefit", "Beneficio"),
+    "scope-item": t("Scope\\nitem", "Elemento\\nde alcance"),
+    "deliverable": t("Deliverable", "Entregable"),
+    "milestone": t("Milestone", "Hito"),
+    "interdependency": t("Interdependency", "Interdependencia"),
+    "cost-plan": t("Cost\\nplan", "Plan de\\ncostes"),
+    "cost-item": t("Cost", "Coste"),
 }
 
 CATEGORIES = {
     "document": t("Document", "Documento"),
     "organisation": t("Organisation", "Organización"),
     "rationale": t("Rationale", "Justificación"),
+    "solution": t("Solution", "Solución"),
     "conditions": t("Conditions", "Condiciones"),
     "references": t("References", "Referencias"),
 }
@@ -193,12 +333,15 @@ CATEGORIES = {
 TABS = {
     "00_document": ["section", "appendix", "paragraph", "comment", "local-figure",
                     "remote-figure", "symbolic-link"],
-    "01_organisation": ["organization", "stakeholder", "meeting", "document-control",
-                        "approval", "revision"],
-    "02_rationale": ["initiation-request", "business-situation", "strategic-goal",
-                     "legal-basis", "outcome", "impact"],
-    "03_conditions": ["success-criterion", "assumption", "constraint", "risk"],
-    "04_references": ["glossary-item", "bibliography-item", "traceability-matrix"],
+    "01_organisation": ["organization", "stakeholder", "meeting", "business-process",
+                        "initiation-request", "document-control", "approval", "revision"],
+    "02_rationale": ["business-situation", "strategic-goal", "legal-basis", "outcome",
+                     "impact", "benefit"],
+    "03_solution": ["alternative", "scope-item", "deliverable", "milestone", "cost-plan",
+                    "cost-item"],
+    "04_conditions": ["success-criterion", "assumption", "constraint", "risk",
+                      "interdependency"],
+    "05_references": ["glossary-item", "bibliography-item", "traceability-matrix"],
 }
 
 UNITS = {"person-day": t("person-days", "días-persona")}
@@ -219,6 +362,13 @@ XSLT_LABELS = {
     "xslt.escalate": t("To be escalated to the directing or steering layer",
                        "Debe escalarse al nivel de dirección o de gestión"),
     "xslt.yes": t("Yes", "Sí"),
+    "xslt.chosen": t(" (chosen)", " (elegida)"),
+    "xslt.swot": t("SWOT analysis", "Análisis DAFO"),
+    "xslt.total_staff": t("Total staff (FTE)", "Total personal (ETC)"),
+    "xslt.total_other": t("Total other costs (k€)", "Total otros costes (k€)"),
+    "xslt.cost_concept": t("Cost", "Coste"),
+    "xslt.unit_fte": t(" (FTE)", " (ETC)"),
+    "xslt.unit_keur": t(" (k€)", " (k€)"),
 }
 
 # ---------------------------------------------------------------------------
@@ -232,13 +382,16 @@ def string(n, v="", cat="detail", **a): return ("string", n, cat, a, v)
 def md(n, v="", cat="detail", **a):     return ("markdown", n, cat, a, v)
 def enum(n, e, cat="detail", **a):      return ("enum", n, cat, dict(a, choices=e), ENUMS[e][0])
 def date(n=":Proteus-date", cat="general"): return ("date", n, cat, {}, DATE)
-def trace(n, targets, cat="dependencies", ttype=":Proteus-dependency", max_=None):
+def trace(n, targets, cat="dependencies", ttype=":Proteus-dependency", max_=None, tooltip_=None):
     a = {"acceptedTargets": targets, "traceType": ttype}
     if max_: a["maxTargetsNumber"] = str(max_)
+    if tooltip_: a["tooltip"] = tooltip_
     return ("trace", n, cat, a, [])
 def unit(n, units, v="0", cat="detail", **a): return ("unit", n, cat, dict(a, units=units), v)
-def boolean(n, v="false", cat="detail"): return ("boolean", n, cat, {}, v)
+def boolean(n, v="false", cat="detail", **a): return ("boolean", n, cat, a, v)
 def url(n, cat="detail"): return ("url", n, cat, {}, "")
+def number(n, v="0", cat="detail", **a): return ("float", n, cat, a, v)
+def integer(n, v="0", cat="detail", **a): return ("integer", n, cat, a, v)
 
 def header(name_text):
     return [name(name_text), date(), ("string", "version", "general", {}, "1.0"),
@@ -254,10 +407,14 @@ ARCHETYPES = {}   # id -> dict(category, classes, children, parents, props, numb
 
 def archetype(id_, category, classes, props, children=":Proteus-none",
               parents=":Proteus-document section"):
+    # Every traceable PM2 object may refine an object of the same class of a
+    # previous artefact (e.g. a success criterion of the PIR in the Business Case)
+    if classes.startswith("traceable-object "):
+        props = props + [trace("refines", classes.split()[-1], tooltip_="refines")]
     ARCHETYPES[id_] = dict(category=category, classes=classes, children=children,
                            parents=parents, props=props + [COMMENTS])
 
-archetype("initiation-request", "02_rationale", "initiation-request",
+archetype("initiation-request", "01_organisation", "initiation-request",
     header(t("Project initiation request", "Solicitud de inicio del proyecto")) + [
         trace("initiator", "stakeholder", "detail", max_=1),
         trace("requesting-unit", "organization", "detail", max_=1),
@@ -275,7 +432,7 @@ archetype("business-situation", "02_rationale", "traceable-object business-situa
     item("SIT-", t("Business situation", "Situación de negocio"),
          t("Currently, _[current situation]_, which causes _[consequence for the business]_.",
            "Actualmente, _[situación actual]_, lo que provoca _[consecuencia para el negocio]_.")) +
-    [enum("kind", "situation-kind")])
+    [enum("kind", "situation-kind"), md("urgency")])
 
 archetype("strategic-goal", "02_rationale", "traceable-object strategic-goal",
     item("SG-", t("Strategic goal", "Objetivo estratégico"),
@@ -301,28 +458,38 @@ archetype("impact", "02_rationale", "traceable-object impact",
          t("_[The current situation / the solution]_ affects _[processes, people or stakeholders]_ because _[reason]_.",
            "_[La situación actual / la solución]_ afecta a _[procesos, personas o partes interesadas]_ porque _[motivo]_.")) +
     [enum("perspective", "perspective"), enum("area", "impact-area"),
-     enum("source", "impact-source"), trace("affects", "stakeholder organization")])
+     enum("source", "impact-source"), enum("severity", "severity"),
+     trace("affects", "stakeholder organization"), trace("affected-processes", "business-process")])
 
-archetype("success-criterion", "03_conditions", "traceable-object success-criterion",
+archetype("benefit", "02_rationale", "traceable-object benefit",
+    item("BEN-", t("Benefit", "Beneficio"),
+         t("_[Measurable improvement]_ for _[beneficiary]_.",
+           "_[Mejora medible]_ para _[beneficiario]_.")) +
+    [string("indicator"), string("baseline"), string("target"),
+     trace("derives-from", "outcome"), trace("perceived-by", "stakeholder organization")])
+
+archetype("success-criterion", "04_conditions", "traceable-object success-criterion",
     item("SC-", t("Success criterion", "Criterio de éxito"),
          t("The project will be considered a success if _[measurable criterion]_.",
            "El proyecto se considerará un éxito si _[criterio medible]_.")) +
-    [enum("dimension", "dimension"), string("target"), trace("evaluates", "outcome")])
+    [enum("dimension", "dimension"), string("target"),
+     boolean("critical", tooltip="critical"), enum("applies-to", "applies-to"),
+     trace("evaluates", "outcome")])
 
-archetype("assumption", "03_conditions", "traceable-object assumption",
+archetype("assumption", "04_conditions", "traceable-object assumption",
     item("ASM-", t("Assumption", "Supuesto"),
          t("It is assumed that _[fact taken as true]_.",
            "Se asume que _[hecho que se da por cierto]_.")) +
     [enum("area", "assumption-area"), enum("validation", "validation", tooltip="validation"),
      trace("may-become", "risk")])
 
-archetype("constraint", "03_conditions", "traceable-object constraint",
+archetype("constraint", "04_conditions", "traceable-object constraint",
     item("CON-", t("Constraint", "Restricción"),
          t("The project must _[limit on schedule, budget, resources, products or compliance]_.",
            "El proyecto debe _[límite de plazo, presupuesto, recursos, productos o cumplimiento]_.")) +
     [enum("area", "constraint-area")])
 
-archetype("risk", "03_conditions", "traceable-object risk",
+archetype("risk", "04_conditions", "traceable-object risk",
     item("RSK-", t("Risk", "Riesgo"),
          t("Because of _[condition]_, it might be that _[event]_, which will lead to _[impact]_.",
            "Debido a _[condición]_, podría ocurrir que _[evento]_, lo que provocaría _[impacto]_."),
@@ -333,6 +500,65 @@ archetype("risk", "03_conditions", "traceable-object risk",
      trace("risk-owner", "stakeholder", "detail", max_=1),
      enum("response-strategy", "response-strategy"), md("actions"), boolean("escalation"),
      trace("related", "assumption constraint")])
+
+archetype("interdependency", "04_conditions", "traceable-object interdependency",
+    item("DEP-", t("Interdependency", "Interdependencia"),
+         t("_[The situation / the solution]_ _[is related to / depends on / can reuse]_ _[other need, initiative, system or service]_.",
+           "_[La situación / la solución]_ _[está relacionada con / depende de / puede reutilizar]_ _[otra necesidad, iniciativa, sistema o servicio]_.")) +
+    [enum("kind", "dependency-kind"), enum("scope", "dependency-scope"),
+     trace("related", "business-situation alternative deliverable")])
+
+# --- Business Case: organisation and solution ---------------------------------
+
+archetype("business-process", "01_organisation", "traceable-object business-process",
+    item("BP-", t("Business process", "Proceso de negocio"),
+         t("_[What the process does and who takes part in it]_.",
+           "_[Qué hace el proceso y quién interviene en él]_.")) +
+    [enum("process-category", "process-category"), string("domain"), string("sub-domain"),
+     string("macro-process"), trace("owner", "organization stakeholder", "detail", max_=1)])
+
+archetype("alternative", "03_solution", "traceable-object alternative",
+    item("ALT-", t("Alternative", "Alternativa"),
+         t("_[What the alternative consists of]_.",
+           "_[En qué consiste la alternativa]_.")) +
+    [enum("kind", "alternative-kind"),
+     md("strengths", "", "swot"), md("weaknesses", "", "swot"),
+     md("opportunities", "", "swot"), md("threats", "", "swot"),
+     md("assessment"), boolean("chosen", tooltip="chosen"), md("selection-rationale"),
+     trace("addresses", "business-situation")])
+
+archetype("scope-item", "03_solution", "traceable-object scope-item",
+    item("SCP-", t("Scope item", "Elemento de alcance"),
+         t("The project _[includes / excludes]_ _[output, process, organisation or location]_.",
+           "El proyecto _[incluye / excluye]_ _[producto, proceso, organización o ubicación]_.")) +
+    [enum("inclusion", "inclusion"), enum("kind", "scope-kind"),
+     trace("realises", "alternative")])
+
+archetype("deliverable", "03_solution", "traceable-object deliverable",
+    item("DLV-", t("Deliverable", "Entregable"),
+         t("_[Deliverable]_, which _[purpose]_.",
+           "_[Entregable]_, que _[finalidad]_.")) +
+    [enum("kind", "deliverable-kind"),
+     trace("within", "scope-item"), trace("contributes-to", "outcome")])
+
+archetype("milestone", "03_solution", "traceable-object milestone",
+    item("MS-", t("Milestone", "Hito"),
+         t("_[Event that marks the milestone]_.",
+           "_[Acontecimiento que marca el hito]_.")) +
+    [enum("kind", "milestone-kind"), date("planned-date", "detail"),
+     trace("delivers", "deliverable")])
+
+archetype("cost-plan", "03_solution", "cost-plan",
+    [name(t("Costs, effort and funding source", "Costes, esfuerzo y fuente de financiación")),
+     integer("first-year", DATE[:4], tooltip="first-year"), md("funding-source")],
+    children="cost-item")
+
+archetype("cost-item", "03_solution", "cost-item",
+    [name(t("Cost", "Coste")),
+     enum("group", "cost-group", "general"), enum("category", "cost-category", "general"),
+     enum("nature", "cost-nature", "general", tooltip="cost-nature")] +
+    [number(f"year-{i}", "0", "costs") for i in range(1, 6)],
+    parents="cost-plan")
 
 archetype("document-control", "01_organisation", "document-control",
     [name(t("Document control", "Control del documento"))],

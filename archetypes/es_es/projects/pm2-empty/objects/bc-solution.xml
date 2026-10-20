@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<object id="bc-solution" classes="section" acceptedChildren=":Proteus-any" acceptedParents=":Proteus-document section">
+  <properties>
+    <stringProperty name=":Proteus-name"><![CDATA[Descripción de la solución]]></stringProperty>
+    <markdownProperty name="comments"><![CDATA[]]></markdownProperty>
+  </properties>
+  <children>
+    <child id="bc-solution-help"/>
+    <child id="bc-legal"/>
+    <child id="bc-benefits"/>
+    <child id="bc-success"/>
+    <child id="bc-scope"/>
+    <child id="bc-solution-impact"/>
+    <child id="bc-deliverables"/>
+    <child id="bc-assumptions"/>
+    <child id="bc-constraints"/>
+    <child id="bc-risks"/>
+    <child id="bc-costs"/>
+    <child id="bc-roadmap"/>
+    <child id="bc-synergies"/>
+  </children>
+</object>
